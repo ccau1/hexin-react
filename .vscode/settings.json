@@ -1,0 +1,33 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "flow.useNPMPackagedFlow": true,
+    "javascript.validate.enable": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/messages/**": false,
+        "**/extracted-messages/**": true,
+        "**/pm2/**": true,
+        "**/node_modules/**": true,
+        "**/.gitignore": true,
+        "**/.flowconfig": true,
+        "**/.eslintrc": true,
+        "**/.eslintignore": true,
+        "**/.editorconfig": true,
+        "**/.babelrc": true,
+        "**/README.md": true,
+        "webpack.config.js": false,
+        "**/build/**": true,
+        ".vscode": false,
+        "server": false,
+        "www": true
+    },
+    "editor.tabCompletion": true,
+    "editor.snippetSuggestions": "top",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.tabSize": 2
+}

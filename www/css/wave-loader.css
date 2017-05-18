@@ -1,0 +1,84 @@
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #323232;
+  padding-top: 10%;
+  z-index: 10000;
+  opacity: 1;
+
+  -webkit-transition: opacity 500ms ease-out 800ms;
+  -moz-transition: opacity 500ms ease-out 800ms;
+  -o-transition: opacity 500ms ease-out 800ms;
+  transition: opacity 500ms ease-out 800ms;
+}
+#loader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.editorial {
+  display: block;
+  width: 100%;
+  height: 10em;
+  margin: 0;
+  margin-top: 20%;
+}
+.parallax > use {
+  animation: move-forever 12s linear infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 3s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+/*prevent many large-by-comparison ripples by shrinking the height*/
+@media (max-width: 50em) {
+  .content h1 {
+    font-size: 12vmax;
+  }
+
+  .editorial {
+    height: 17vw;
+  }
+}
+.content {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  background-color: #2d55aa;
+  text-align: center;
+  min-height: 75vh;
+  margin: -.1em 0 0 0;
+  padding: 1em;
+  color: #eee;
+  font-size: 2em;
+  font-weight: 300;
+}
+
+.content {
+  font-size: 1em;
+}
+
+.content h1 {
+  margin-top: -1.3em;
+  font-weight: 100;
+  font-size: 5em;
+  user-select: none;
+  cursor: default;
+}

@@ -1,0 +1,359 @@
+{
+  "Console Log": {
+    "prefix": "log",
+    "body": "console.log('$1');$0"
+  },
+
+  /* IMPORTS */
+  "Import File": {
+    "prefix": "im",
+    "body": "import ${1} from '${2}${1}';$0"
+  },
+  "Import Local File": {
+    "prefix": "iml",
+    "body": "import ${1} from './${1}';$0"
+  },
+  "Import All": {
+    "prefix": "ima",
+    "body": "import * as ${1} from '${2}${1}';$0"
+  },
+  "Import Some": {
+    "prefix": "ims",
+    "body": "import {$1} from '$2';$0"
+  },
+  "Import App Components": {
+    "prefix": "imac",
+    "body": "import {$1} from 'app/components';$0"
+  },
+  "Index File": {
+    "prefix": "imi",
+    "body": [
+      "/* @flow */",
+      "import ${1:MyComponent} from './${1:MyComponent}';",
+      "$0",
+      "export default ${1:MyComponent};"
+    ]
+  },
+
+  /* COMPONENT METHODS */
+  "Set State": {
+    "prefix": "sst",
+    "body": [
+      "this.setState({",
+      "  ${1}: $2",
+      "});$0"
+    ]
+  },
+
+  /* LIFECYCLE METHODS */
+  "constructor": {
+    "prefix":"'cstt'",
+    "body": [
+      "constructor(props: Object): void {",
+      "super(props);",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": [
+      "componentWillMount(): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": [
+      "componentDidMount(): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "componentWillUnmount": {
+    "prefix": "cwum",
+    "body": [
+      "componentWillUnmount(): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": [
+      "shouldComponentUpdate(nextProps: Object, nextState: Object): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "componentWillUpdate": {
+    "prefix": "cwu",
+    "body": [
+      "componentWillUpdate(nextProps: Object, nextState?: Object): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "componentDidUpdate": {
+    "prefix": "cdu",
+    "body": [
+      "componentDidUpdate(prevProps: Object, prevState: Object): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+  "componentWillReceiveProps": {
+    "prefix": "cwr",
+    "body": [
+      "componentWillReceiveProps(nextProps: Object): void {",
+      "  $0",
+      "}"
+    ]
+  },
+
+
+  /* REACT COMPONENTS */
+  "R Container Component": {
+    "prefix": "rcc",
+    "body": [
+      "/* @flow */",
+      "",
+      "import React from 'react';",
+      "import {connect} from 'react-redux';",
+      "import {bindActionCreators} from 'redux';",
+      "import {ActionCreators} from 'actions';",
+      "import ${1:MyComponent} from './${1:MyComponent}';",
+
+      "class ${1:MyComponent}Container extends React.Component {",
+      "  constructor(props: Object): void {",
+      "    super(props);$0",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <${1:MyComponent} />",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "function mapStateToProps(state: Object): {${2:MyProp}: ${3:Object}} {",
+      "  return {",
+      "    ${2:MyProp}: state.${2:MyProp},",
+      "  };",
+      "}",
+      "",
+      "function mapDispatchToProps(dispatch: Function): {Actions: Object} {",
+      "  return {Actions: bindActionCreators(ActionCreators, dispatch)};",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:MyComponent}Container);",
+      ""
+    ]
+  },
+
+  "R Component": {
+    "prefix": "rc",
+    "body": [
+      "/* @flow */",
+      "",
+      "import React, {Component} from 'react';",
+      "",
+      "export default class ${1:MyComponent} extends Component {",
+      "  static propTypes = {",
+      "    ${2}",
+      "  };",
+      "",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        ${0}",
+      "      </div>",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+
+  "R Stateless Component": {
+    "prefix": "rsc",
+    "body": [
+      "/* @flow */",
+      "",
+      "import React from 'react';",
+      "",
+      "export default (props: Object) => {",
+      "  return (",
+      "  <div>",
+      "    ${1:Page Content}",
+      "  </div>",
+      "  );",
+      "};",
+      ""
+    ]
+  },
+
+  "R Redux Form Component": {
+    "prefix": "rrfc",
+    "body": [
+      "/* @flow */",
+      "import React, {Component} from 'react';",
+      "import {reduxForm, Field} from 'redux-form';",
+      "import {",
+      "  TextField,",
+      "} from 'redux-form-material-ui';",
+      "import {RaisedButton, FlatButton} from 'material-ui';",
+      "import {FormattedMessage} from 'react-intl';",
+      "import messages from './messages';",
+      "",
+      "const validate = values => {",
+      "  const errors = {};",
+      "",
+      "",
+      "",
+      "  return errors;",
+      "};",
+      "",
+      "class ${1:Component}Form extends Component {",
+      "  static propTypes = {",
+      "",
+      "  };",
+      "",
+      "  render() {",
+      "    const {error, handleSubmit, pristine, reset, submitting} = this.props;",
+      "    return (",
+      "      <form onSubmit={handleSubmit}>",
+      "      {error && <strong>{error}</strong>}",
+      "        <div>",
+      "          <Field name=\"username\" component={TextField} floatingLabelText={<FormattedMessage {...messages.username} />} />",
+      "        </div>",
+      "        $0",
+      "        <br />",
+      "        <br />",
+      "        <RaisedButton type=\"submit\" disabled={submitting} primary={true}>Login</RaisedButton>",
+      "        <FlatButton disabled={pristine || submitting} onClick={reset}>Clear</FlatButton>",
+      "      </form>",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default reduxForm({",
+      "  form: '${1:Component}',",
+      "  validate,",
+      "})(${1:Component}Form);",
+      ""
+    ]
+  },
+
+  /* REACT NATIVE COMPONENTS */
+  "RN Component": {
+    "prefix": "rnc'",
+    "body": [
+      "/* @flow */",
+      "",
+      "import React, {Component} from 'react';",
+      "import {",
+      "  View,",
+      "} from 'react-native';",
+      "import styles from './styles';",
+      "",
+      "class ${1:MyComponent} extends Component {",
+      "",
+      "  static propTypes = {",
+      "  };",
+      "",
+      "  constructor(props: Object): void {",
+      "  super(props);",
+      "  }",
+      "",
+      "  render() {",
+      "  return (",
+      "    <View style={styles.container}>",
+      "    $2",
+      "    </View>",
+      "  );",
+      "  }",
+      "}",
+      "",
+      "export default ${1:MyComponent};",
+      ""
+    ]
+  },
+
+  "RN Container Component": {
+    "prefix": "rncc'",
+    "body": [
+      "/* @flow */",
+      "",
+      "import React, {Component} from 'react';",
+      "import {connect} from 'react-redux';",
+      "import {bindActionCreators} from 'redux';",
+      "import {ActionCreators} from 'src/actions';",
+      "import {State} from 'src/types';",
+      "",
+      "import ${1:MyComponent} from './${1:MyComponent}';",
+      "",
+      "class ${1:MyComponent}Container extends Component {",
+      "  static PropTypes = {",
+      "",
+      "  };",
+      "",
+      "  render() {",
+      "  return (",
+      "    <${1:MyComponent} />",
+      "  );",
+      "  }",
+      "}",
+      "",
+      "",
+      "function mapStateToProps(state: State): {${2:MyProp}: ${3:Object}} {",
+      "  return {",
+      "    ${2:MyProp}: state.${2:MyProp},",
+      "  };",
+      "}",
+      "",
+      "function mapDispatchToProps(dispatch: Function): {Actions: Object} {",
+      "  return {Actions: bindActionCreators(ActionCreators, dispatch)};",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:MyComponent}Container);",
+      ""
+    ]
+  },
+
+  /* STYLES */
+
+  "Stylesheet page": {
+    "prefix": "stylesheet",
+    "body": [
+      "/* @flow */",
+      "",
+      "module.exports = require('react-native').StyleSheet.create({",
+      "  $1",
+      "});"
+    ]
+  },
+
+  /* MESSAGES */
+
+  "Intl Messages": {
+    "prefix": "imsg",
+    "body": [
+      "/* @flow */",
+      "",
+      "import {defineMessages} from 'react-intl';",
+      "",
+      "export default defineMessages({",
+      "  $1",
+      "});"
+    ]
+  }
+}

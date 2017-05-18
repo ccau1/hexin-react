@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "wttwe-web",
+      "cwd" : "/root/wttwe/wttwe-web",
+      "script": "server/index.js",
+      "instances": 1,
+      "exec_mode": "fork",
+      "env": {
+        "PORT": "3000"
+      }
+    }
+  ]
+}

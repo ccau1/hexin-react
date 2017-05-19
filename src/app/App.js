@@ -42,7 +42,7 @@ export const preInit = () => {
     setRequestConnection('main', 'http://localhost:8280/api/', {
       log: false,
       headers: {
-        'accept-language': 'en', // default language
+        'accept-language': 'en', // TODO:: get this from store. default language
       },
     });
     const actions = bindActionCreators(ActionCreators, store.dispatch);

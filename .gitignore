@@ -2,7 +2,7 @@
 
 extracted-messages
 .idea
-.vscode/chrome
+.vscode/.chrome
 
 ### OSX ###
 *.DS_Store
@@ -180,10 +180,6 @@ GitHub.sublime-settings
 ### TortoiseGit ###
 # Project-level settings
 /.tgitconfig
-
-
-### VisualStudioCode ###
-.vscode
 
 
 

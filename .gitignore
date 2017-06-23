@@ -2,7 +2,9 @@
 
 extracted-messages
 .idea
-.vscode/.chrome
+.chrome
+**/stats.json
+www/**
 
 ### OSX ###
 *.DS_Store
@@ -180,6 +182,10 @@ GitHub.sublime-settings
 ### TortoiseGit ###
 # Project-level settings
 /.tgitconfig
+
+
+### VisualStudioCode ###
+#.vscode
 
 
 
@@ -470,7 +476,6 @@ build
 upload
 
 # WebStorm
-.idea
 *-compiled.js
 
 # bower
@@ -478,3 +483,5 @@ bower_components
 public/vendor
 
 www/bundle.js
+yarn.lock
+**/__snapshots__/

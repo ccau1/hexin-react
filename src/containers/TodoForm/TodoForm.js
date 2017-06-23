@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {
-  TextField,
+  TextField
 } from 'redux-form-material-ui';
 import {Button} from 'app/components';
 import {FormattedMessage} from 'react-intl';
@@ -34,8 +34,8 @@ class TodoForm extends Component {
 
         <br />
         <br />
-        <Button.Primary type="submit" disabled={submitting} primary={true}>Add</Button.Primary>
-        <Button.Link disabled={pristine || submitting} onClick={reset}>Clear</Button.Link>
+        <Button.Primary type="submit" disabled={submitting} primary={true}><FormattedMessage {...messages.formBtnAdd} /></Button.Primary>
+        <Button.Link disabled={pristine || submitting} onClick={reset}><FormattedMessage {...messages.formBtnClear} /></Button.Link>
       </form>
     );
   }
@@ -43,5 +43,5 @@ class TodoForm extends Component {
 
 export default reduxForm({
   form: 'Todo',
-  validate,
+  validate
 })(TodoForm);

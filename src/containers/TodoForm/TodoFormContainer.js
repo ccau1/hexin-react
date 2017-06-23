@@ -26,7 +26,7 @@ class TodoFormContainer extends React.Component {
 
 function mapStateToProps(state: Object): {MyProp: Object} {
   return {
-    MyProp: state.MyProp,
+    MyProp: state.MyProp
   };
 }
 

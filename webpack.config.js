@@ -1,35 +1,7 @@
-const path = require('path');
-// const webpack = require('webpack');
+let webpack = require('./config/webpack/base');
+const NODE_ENV = process.env.NODE_ENV || 'development';
+let envWebpack = require('./config/webpack/' + NODE_ENV);
 
-module.exports = {
-  devtool: 'eval-source-map',
-  context: path.join(__dirname, 'src'),
-  entry: [
-    'babel-polyfill',
-    './index.js',
-  ],
-  output: {
-    path: path.join(__dirname, 'www'),
-    filename: 'bundle.js',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
-      },
-    ],
-  },
-  plugins: [
+envWebpack.config(webpack);
 
-  ],
-  resolve: {
-    modules: [
-      path.join(__dirname, 'src'),
-      path.join(__dirname, 'node_modules'),
-    ],
-  },
-};
+module.exports = webpack;

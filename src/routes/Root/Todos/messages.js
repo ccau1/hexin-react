@@ -4,13 +4,13 @@ import {defineMessages} from 'react-intl';
 
 export default defineMessages({
   title: {
-    id: 'todospage.title',
+    id: 'todospage.title.todos',
     defaultMessage: 'Todos',
-    description: 'todos title',
+    description: 'todos title'
   },
   subtitle: {
-    id: 'todospage.subtitle',
-    defaultMessage: 'Add your tasks now!',
-    description: 'a message to get people adding tasks to todo',
-  },
+    id: 'todospage.subtitle.addtasknow',
+    defaultMessage: 'Add your tasks now!!',
+    description: 'a message to get people adding tasks to todo'
+  }
 });

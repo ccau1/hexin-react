@@ -7,7 +7,7 @@ import DocumentTitle from 'app/components/DocumentTitle';
 import {
   Card,
   CardTitle,
-  CardText,
+  CardText
 } from 'material-ui';
 import {FormattedMessage} from 'react-intl';
 import messages from './messages';

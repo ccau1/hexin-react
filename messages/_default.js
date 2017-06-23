@@ -1,5 +1,7 @@
 export default {
   'contact.title': 'Contact Us',
+  'form.btn.add': 'Add',
+  'form.btn.clear': 'Clear',
   'home.title.helloworld': 'Hello World',
   'input.required': 'This field cannot be empty',
   'loginPage.title.login': 'Login',
@@ -9,7 +11,9 @@ export default {
   'menu.button.contactus': 'Contact Us',
   'menu.button.home': 'Home',
   'menu.button.login': 'Login',
+  'menu.button.secretstuff': 'Secret Stuff',
   'menu.button.signup': 'Sign Up',
+  'menu.button.todos': 'Todo',
   'menu.text.welcomeback': 'Welcome Back, {username}!',
   'signUpPage.title.signUp': 'Sign Up',
   'signUpPage.firstName': 'First Name',
@@ -21,4 +25,8 @@ export default {
   'signup.validation.matchConfirmPassword': 'Confirm Password should match with Password',
   'signup.validation.invalidEmail': 'This E-mail is invalid',
   'signup.success.message': 'Congratulations! You have successfully registered',
+  'todoform.heading.name': 'Task',
+  'todoitem.btn.delete': 'Delete',
+  'todospage.title.todos': 'Todos',
+  'todospage.subtitle.addtasknow': 'Add your tasks now!'
 };

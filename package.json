@@ -5,11 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "test": "cross-env NODE_PATH=./src NODE_ENV=testing mocha \"__test__/**/*.js\" --compilers js:babel-register",
-    "build": "webpack",
-    "start": "cross-env NODE_ENV=development node --inspect server",
+    "build": "webpack -p --progress --colors",
+    "buildProd": "cross-env NODE_ENV=production npm run build",
+    "buildTest": "cross-env NODE_ENV=testing npm run build",
+    "start": "cross-env NODE_ENV=development && node --inspect server",
+    "startTest": "cross-env NODE_ENV=testing node server",
     "startProd": "cross-env NODE_ENV=production node server",
+    "bstartTest": "npm run build | npm run startTest",
+    "bstartProd": "npm run build | npm run startProd",
     "lint": "eslint src --ext .jsx,.js || true",
-    "flow": "flow; test $? -eq 0 -o $? -eq 2"
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "start-hot": "webpack-dev-server --port 3000 --watch --hot --watch-poll"
   },
   "repository": {
     "type": "git",
@@ -48,9 +54,7 @@
     "redux-thunk": "^2.2.0",
     "reflexbox": "^2.2.3",
     "styled-components": "^1.4.6",
-    "styled-components-theme": "^1.0.2",
-    "webpack": "^2.4.1",
-    "webpack-dev-middleware": "^1.10.2"
+    "styled-components-theme": "^1.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -66,19 +70,25 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^3.5.0",
+    "compression-webpack-plugin": "^0.4.0",
     "cross-env": "^4.0.0",
     "enzyme": "^2.8.2",
     "eslint": "^3.16.1",
     "eslint-config-aftership": "^3.3.0",
     "eslint-plugin-react": "^6.10.0",
     "flow-bin": "^0.45.0",
+    "husky": "^0.13.4",
     "jest": "^19.0.2",
     "lint": "^1.1.2",
     "mocha": "^3.2.0",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.4.2",
-    "sinon": "^2.2.0"
-  },
-  "jest": {}
+    "sinon": "^2.2.0",
+    "webpack": "^3.0.0",
+    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-dev-middleware": "^1.11.0",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-hot-middleware": "^2.18.0"
+  }
 }

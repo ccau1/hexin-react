@@ -21,7 +21,7 @@ class RequestConnection {
       options: {},
       params: {},
       refresh_token: '',
-      token: '',
+      token: ''
     };
   }
 
@@ -29,8 +29,8 @@ class RequestConnection {
     return {
       header_format: 'Bearer %s',
       headers: {
-        'accept-language': 'en',
-      },
+        'accept-language': 'en'
+      }
     };
   }
 

@@ -10,11 +10,11 @@
         "**/.DS_Store": true,
         "**/messages/**": false,
         "**/extracted-messages/**": true,
-        "**/pm2/**": true,
+        "**/pm2/**": false,
         "**/node_modules/**": true,
         "**/.gitignore": true,
         "**/.flowconfig": true,
-        "**/.eslintrc": true,
+        "**/.eslintrc": false,
         "**/.eslintignore": true,
         "**/.editorconfig": true,
         "**/.babelrc": true,
@@ -23,7 +23,7 @@
         "**/build/**": true,
         ".vscode": false,
         "server": false,
-        "www": true
+        "www": false
     },
     "editor.tabCompletion": true,
     "editor.snippetSuggestions": "top",

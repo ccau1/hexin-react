@@ -9,10 +9,10 @@ export default class TodoList extends Component {
     items: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string,
       timestamp: PropTypes.number,
-      isComplete: PropTypes.bool,
+      isComplete: PropTypes.bool
     })).isRequired,
     onItemToggle: PropTypes.func.isRequired,
-    onItemDelete: PropTypes.func.isRequired,
+    onItemDelete: PropTypes.func.isRequired
   };
 
   render() {

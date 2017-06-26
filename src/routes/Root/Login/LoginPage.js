@@ -22,7 +22,11 @@ export default class LoginPage extends Component {
   };
 
   userInRequiredRoles(user: Object, requiredRoles: Array<string> = []): boolean {
-    const curUserRoles = Array.isArray(user.roles) ? user.roles : user.roles.split('|');
+    let curUserRoles = [];
+
+    if (user && user.roles) {
+      curUserRoles = Array.isArray(user.roles) ? user.roles : user.roles.split('|');
+    }
 
     if (requiredRoles.indexOf('anon') > -1) {
       return true;
@@ -40,7 +44,7 @@ export default class LoginPage extends Component {
   render() {
     const {user, redirect, requiredRoles} = this.props;
 
-    if (user && this.userInRequiredRoles(user, requiredRoles)) {
+    if (user && (!requiredRoles || !requiredRoles.length || this.userInRequiredRoles(user, requiredRoles))) {
       return (
         <DocumentTitle title="Login Success!">
           <LoginFormSuccess redirect={redirect || '/'} counter={4} />

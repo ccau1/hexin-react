@@ -7,13 +7,15 @@ export default class extends RouteStrategy {
   authenticate(roles: Array<string>): boolean {
     const user = store.getState().account.user;
 
+    const curUserRoles = Array.isArray(user.roles) ? user.roles : user.roles.split('|');
+
     if (roles.indexOf('anon') > -1) {
       return true;
     } else if (!user) {
       return false;
     } else if (roles.indexOf('loggedIn') > -1) {
       return true;
-    } else if (user.roles.some(userRole => roles.indexOf(userRole) > -1)) {
+    } else if (curUserRoles.some(userRole => roles.indexOf(userRole) > -1)) {
       return true;
     } else {
       return false;

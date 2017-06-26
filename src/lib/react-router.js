@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Route,
-  withRouter,
+  withRouter
 } from 'react-router-dom';
 import {Redirect} from 'react-router';
 
@@ -33,7 +33,7 @@ export const getRoute = (RouteStrategy_: RouteStrategy = RouteStrategy, layout: 
               <Redirect to={{
                 pathname: `${routeStrategy.unAuthRedirect}`,
                 search: `?redirect=${location.pathname}`,
-                state: {requiredRoles: auth},
+                state: {requiredRoles: auth}
               }} />
             ));
             return <RedirectComponent />;

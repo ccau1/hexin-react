@@ -38,49 +38,28 @@
   /* COMPONENT METHODS */
   "Set State": {
     "prefix": "sst",
-    "body": [
-      "this.setState({",
-      "  ${1}: $2",
-      "});$0"
-    ]
+    "body": ["this.setState({", "  ${1}: $2", "});$0"]
   },
 
   /* LIFECYCLE METHODS */
   "constructor": {
-    "prefix":"'cstt'",
-    "body": [
-      "constructor(props: Object): void {",
-      "super(props);",
-      "  $0",
-      "}"
-    ]
+    "prefix": "'cstt'",
+    "body": ["constructor(props: Object): void {", "super(props);", "  $0", "}"]
   },
 
   "componentWillMount": {
     "prefix": "cwm",
-    "body": [
-      "componentWillMount(): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentWillMount(): void {", "  $0", "}"]
   },
 
   "componentDidMount": {
     "prefix": "cdm",
-    "body": [
-      "componentDidMount(): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentDidMount(): void {", "  $0", "}"]
   },
 
   "componentWillUnmount": {
     "prefix": "cwum",
-    "body": [
-      "componentWillUnmount(): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentWillUnmount(): void {", "  $0", "}"]
   },
 
   "shouldComponentUpdate": {
@@ -119,6 +98,17 @@
     ]
   },
 
+  "React with Styles": {
+    "prefix": "rws",
+    "body": [
+      "import { css, withStyles } from \"../../Themes\";",
+      "export default withStyles(({ color, unit }) => ({",
+      "  container: {",
+      "    $0",
+      "  }",
+      "}))($1);"
+    ]
+  },
 
   /* REACT COMPONENTS */
   "R Container Component": {
@@ -168,13 +158,13 @@
       "",
       "export default class ${1:MyComponent} extends Component {",
       "  static propTypes = {",
-      "    ${2}",
+      "  ${3}",
       "  };",
       "",
       "  render() {",
       "    return (",
       "      <div>",
-      "        ${0}",
+      "        ${2}",
       "      </div>",
       "    );",
       "  }",

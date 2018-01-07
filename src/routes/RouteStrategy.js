@@ -1,27 +1,30 @@
-import {RouteStrategy} from 'lib/react-router';
-import {store} from 'app';
+import { RouteStrategy } from "../Lib/route";
+// import { store } from "app";
 
 export default class extends RouteStrategy {
-  unAuthRedirect = '/login';
+  unAuthRedirect = "/login";
 
   authenticate(roles: Array<string>): boolean {
-    const user = store.getState().account.user;
-    let curUserRoles = [];
+    // const user = store.getState().account.user;
+    // let curUserRoles = [];
 
-    if (user && user.roles) {
-      curUserRoles = Array.isArray(user.roles) ? user.roles : user.roles.split('|');
-    }
+    // if (user && user.roles) {
+    //   curUserRoles = Array.isArray(user.roles)
+    //     ? user.roles
+    //     : user.roles.split("|");
+    // }
 
-    if (roles.indexOf('anon') > -1) {
-      return true;
-    } else if (!user) {
-      return false;
-    } else if (roles.indexOf('loggedIn') > -1) {
-      return true;
-    } else if (curUserRoles.some(userRole => roles.indexOf(userRole) > -1)) {
-      return true;
-    } else {
-      return false;
-    }
+    // if (roles.indexOf("anon") > -1) {
+    //   return true;
+    //   // } else if (!user) {
+    //   //   return false;
+    // } else if (roles.indexOf("loggedIn") > -1) {
+    //   return true;
+    // } else if (curUserRoles.some(userRole => roles.indexOf(userRole) > -1)) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    return true;
   }
 }

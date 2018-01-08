@@ -1,32 +1,25 @@
 import React from "react";
-import { css, withStyles } from "../../Themes";
+import styled from "styled-components";
 import NavItem from "./NavItem";
+
+const NavContainer = styled.div`
+  color: ${props => props.theme.color.primary};
+  margin-bottom: ${props => 2 * props.theme.unit + "px"};
+`;
 
 const Nav = ({ history, styles }) => {
   return (
-    <div {...css(styles.container)}>
-      <NavItem to="/">Home</NavItem>
-      <NavItem to="/about">About</NavItem>
-    </div>
+    <NavContainer>
+      <NavItem exact to="/">
+        Home
+      </NavItem>
+      <NavItem to="/about" auth={["member", "admin"]}>
+        About
+      </NavItem>
+      <NavItem to="/grid">Grid</NavItem>
+      <NavItem to="/typography">Typography</NavItem>
+    </NavContainer>
   );
 };
 
-export default withStyles(({ color, unit }) => ({
-  container: {
-    color: color.primary,
-    marginBottom: 2 * unit
-  },
-
-  link: {
-    color: color.primary
-  },
-
-  activeLink: {
-    color: color.secondary,
-    textDecoration: "none"
-  },
-
-  link_bold: {
-    fontWeight: 700
-  }
-}))(Nav);
+export default Nav;

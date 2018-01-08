@@ -5,6 +5,8 @@ export default class extends RouteStrategy {
   unAuthRedirect = "/login";
 
   authenticate(roles: Array<string>): boolean {
+    console.log("roles", roles);
+    return !roles || roles.indexOf("admin") === -1;
     // const user = store.getState().account.user;
     // let curUserRoles = [];
 
@@ -25,6 +27,5 @@ export default class extends RouteStrategy {
     // } else {
     //   return false;
     // }
-    return true;
   }
 }

@@ -1,11 +1,6 @@
-import React from "react";
-import { css, withStyles } from "../../Themes";
+import styled from "styled-components";
 
-const Content = ({ children, styles }) => {
-  return <div {...css(styles.container)}>{children}</div>;
-};
-export default withStyles(({ color, unit }) => ({
-  container: {
-    flex: 1
-  }
-}))(Content);
+export default styled.div`
+  flex: 1;
+  overflow: auto;
+`;

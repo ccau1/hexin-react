@@ -2,23 +2,26 @@
 
 import React from "react";
 import Nav from "./Nav";
-import { withStyles, css } from "../../Themes";
-const SideBar = ({ styles }) => {
+import styled from "styled-components";
+
+import NavBar from "../../Components/NavBar";
+
+const SideBarContainer = styled.div`
+  width: ${props => 250 * props.theme.unit + "px"};
+  background-color: ${props => props.theme.color.primary};
+`;
+
+const SideBarHeader = NavBar.extend`
+  background-color: rgba(0, 0, 0, 0.3);
+  color: ${props => props.theme.color.primaryText};
+  font-size: ${props => 17 * props.theme.unit + "px"};
+`;
+
+export default ({ styles }) => {
   return (
-    <div {...css(styles.container)}>
-      <div {...css(styles.navBar)}>SideBar</div>
+    <SideBarContainer>
+      <SideBarHeader>Your Logo</SideBarHeader>
       <Nav />
-    </div>
+    </SideBarContainer>
   );
 };
-
-export default withStyles(({ color, unit, presets }) => ({
-  container: {
-    width: 250 * unit,
-    backgroundColor: color.primary
-  },
-  navBar: {
-    ...presets.navBar,
-    backgroundColor: "rgba(0, 0, 0, 0.3)"
-  }
-}))(SideBar);

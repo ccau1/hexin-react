@@ -1,16 +1,15 @@
 /* @flow */
 
-import React, { Component } from "react";
-import { css, withStyles } from "../Themes";
+import React from "react";
 
-class AboutPage extends Component {
-  static propTypes = {};
+import DocumentTitle from "../Components/DocumentTitle";
+import ContentContainer from "../Components/ContentContainer";
+import H from "../Components/H";
 
-  render() {
-    const { styles } = this.props;
-    return <div {...css(styles.mainContainer)}>About page</div>;
-  }
-}
-export default withStyles(({ color, unit, presets }) => ({
-  mainContainer: presets.mainContainer
-}))(AboutPage);
+export default () => (
+  <DocumentTitle title={"About Page"}>
+    <ContentContainer>
+      <H h={1}>About Page</H>
+    </ContentContainer>
+  </DocumentTitle>
+);

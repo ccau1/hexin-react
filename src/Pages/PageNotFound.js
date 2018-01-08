@@ -1,11 +1,11 @@
 /* @flow */
 
-import React, { Component } from "react";
+import React from "react";
 
-export default class PageNotFound extends Component {
-  static propTypes = {};
+import DocumentTitle from "../Components/DocumentTitle";
 
-  render() {
-    return <div>page not found</div>;
-  }
-}
+export default () => (
+  <DocumentTitle title={"Page Not Found"}>
+    <div>page not found</div>
+  </DocumentTitle>
+);

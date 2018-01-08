@@ -1,30 +1,20 @@
-/* @flow */
-
-import React, { Component } from "react";
-import { withStyles, css } from "../../Themes";
+import React from "react";
+import styled from "styled-components";
 import FaBars from "react-icons/lib/fa/bars";
 
-class Header extends Component {
-  static propTypes = {};
+import NavBar from "../../Components/NavBar";
 
-  render() {
-    const { styles } = this.props;
-    return (
-      <div {...css(styles.container)}>
-        <div {...css(styles.leftSide)}>
-          <FaBars />
-        </div>
-        <div {...css(styles.rightSide)} />
-      </div>
-    );
-  }
-}
+const Container = NavBar;
 
-export default withStyles(({ color, unit, presets }) => ({
-  container: {
-    ...presets.navBar,
-    justifyContent: "space-between"
-  },
-  leftSide: {},
-  rightSide: {}
-}))(Header);
+const HeaderLeftSide = styled.div``;
+
+const HeaderRightSide = styled.div``;
+
+export default () => (
+  <Container>
+    <HeaderLeftSide>
+      <FaBars />
+    </HeaderLeftSide>
+    <HeaderRightSide />
+  </Container>
+);

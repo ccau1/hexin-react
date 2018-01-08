@@ -1,39 +1,23 @@
-/* @flow */
-
 import React from "react";
-import { css, withStyles } from "../../Themes";
-import { NavLink } from "react-router-dom";
-const NavItem = ({ styles, to, children }) => {
-  const activeLink = css(styles.activeLink);
-  return (
-    <NavLink
-      to={to}
-      {...css(styles.link)}
-      activeClassName={activeLink.className}
-    >
-      {children}
-    </NavLink>
-  );
-};
-export default withStyles(({ color, unit, screenPadding }) => ({
-  link: {
-    ":before": {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      backgroundColor: "transparent"
-    },
-    ":hover:before": {
-      backgroundColor: "rgb(0, 0, 0, 0.3)"
-    },
-    color: color.primaryText,
-    display: "block",
-    padding: screenPadding * unit
-  },
-  activeLink: {
-    color: color.primaryHighlightText,
-    textDecoration: "none"
+import { NavLink } from "../../Lib/route";
+import styled from "styled-components";
+
+const NavItem = styled(NavLink)`
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  display: block;
+  padding: ${props => 10 * props.theme.unit + "px"}
+    ${props => props.theme.screenPadding * props.theme.unit + "px"};
+  background-color: transparent;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: ${props => props.theme.color.primaryText};
   }
-}))(NavItem);
+  &.${props => props.activeClassName} {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+`;
+
+export default props => {
+  return <NavItem {...props} activeClassName={"active"} />;
+};

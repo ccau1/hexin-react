@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NavItem from "./NavItem";
+import NavItemGroup from "./NavItemGroup";
 
 const NavContainer = styled.div`
   color: ${props => props.theme.color.primary};
@@ -16,8 +17,11 @@ const Nav = ({ history, styles }) => {
       <NavItem to="/about" auth={["member", "admin"]}>
         About
       </NavItem>
-      <NavItem to="/grid">Grid</NavItem>
-      <NavItem to="/typography">Typography</NavItem>
+      <NavItemGroup label={"Components"}>
+        <NavItem to="/grid">Grid</NavItem>
+        <NavItem to="/typography">Typography</NavItem>
+      </NavItemGroup>
+      <NavItem to="/landing-page">Landing Page</NavItem>
     </NavContainer>
   );
 };

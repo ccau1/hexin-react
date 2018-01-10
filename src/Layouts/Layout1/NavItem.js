@@ -6,6 +6,7 @@ const NavItem = styled(NavLink)`
   text-decoration: none;
   color: rgba(255, 255, 255, 0.65);
   display: block;
+  cursor: pointer;
   padding: ${props => 10 * props.theme.unit + "px"}
     ${props => props.theme.screenPadding * props.theme.unit + "px"};
   background-color: transparent;

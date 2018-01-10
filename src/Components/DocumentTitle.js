@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import withSideEffect from "react-side-effect";
 
@@ -39,7 +39,7 @@ function handleStateChangeOnClient(obj) {
   }
 }
 
-class DocumentTitle extends Component {
+class DocumentTitle extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     prefix: PropTypes.string,
@@ -48,7 +48,7 @@ class DocumentTitle extends Component {
 
   render() {
     if (this.props.children) {
-      return React.Children.only(this.props.children);
+      return this.props.children;
     } else {
       return null;
     }

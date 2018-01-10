@@ -5,6 +5,8 @@ import Card from "../Components/Card";
 import { Row, Col } from "react-flexa";
 import H from "../Components/H";
 
+console.log("Card", Card, Card.Title);
+
 export default () => (
   <DocumentTitle title={"Grid Page"}>
     <ContentContainer>
@@ -43,16 +45,39 @@ export default () => (
         </Col>
       </Row>
       <H h={2}>List Detail View Example</H>
-      <Row gutter={0}>
-        <Col xs={12} sm={3} gutter={0}>
-          <Card>Some Item</Card>
-          <Card>Some Item</Card>
-          <Card>Some Item</Card>
-          <Card>Some Item</Card>
-          <Card>Some Item</Card>
+      <Row gutter={0} style={{ height: "700px" }}>
+        <Col
+          xs={12}
+          sm={3}
+          gutter={0}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <div style={{ flex: 1, overflow: "auto" }}>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+            <Card>Some Item</Card>
+          </div>
         </Col>
         <Col xs={12} sm={9} gutter={0} style={{ display: "flex" }}>
           <Card>
+            <Card.Image
+              top
+              src={
+                "https://cdn3.bigcommerce.com/s-hweklwa/product_images/uploaded_images/the-bahamas.jpg?t=1478727778"
+              }
+              style={{ height: "250px" }}
+            />
+            <Card.Title>stuff</Card.Title>
             <H h={3}>List Detail View Example</H>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
             pharetra mi. Cras nunc nulla, vulputate malesuada libero ut, gravida

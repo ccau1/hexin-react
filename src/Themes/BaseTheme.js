@@ -5,6 +5,7 @@ const theme = {
     primaryText: "#f3f3f3",
     primaryHighlightText: "#fff",
     secondaryText: "#f3f3f3",
+    background: "#fdfdfd",
     contentBackground: "#fff"
   },
   unit: 1,

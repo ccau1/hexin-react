@@ -2,12 +2,12 @@ import React from "react";
 
 import DocumentTitle from "../Components/DocumentTitle";
 import ContentContainer from "../Components/ContentContainer";
-import H from "../Components/H";
+import H1 from "../Components/Dom/H1";
 
 export default () => (
   <DocumentTitle title={"Home Page"}>
     <ContentContainer>
-      <H h={1}>Home Page</H>
+      <H1>Home Page</H1>
     </ContentContainer>
   </DocumentTitle>
 );

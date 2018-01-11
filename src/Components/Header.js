@@ -13,9 +13,13 @@ const HeaderContainer = styled.div`
 
 export default class Header extends React.Component {
   static propTypes = {
+    // whether header is fixed
     fixed: PropTypes.bool,
+    // threshold where header becomes fixed
     toFixedThreshold: PropTypes.number,
+    // classname on pass threshold
     belowThresholdClassname: PropTypes.string,
+    // on traverse threshold change
     onThresholdChange: PropTypes.func
   };
   static defaultProps = {

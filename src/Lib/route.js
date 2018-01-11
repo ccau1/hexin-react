@@ -29,12 +29,6 @@ export const withRouteStrategy = ComponentToWrap => {
 };
 
 export const NavLink = withRouteStrategy(({ routeStrategy, auth, ...rest }) => {
-  console.log(
-    "routeStrategy",
-    routeStrategy.authenticate(auth),
-    routeStrategy,
-    auth
-  );
   return routeStrategy.authenticate(auth) ? (
     <OriginalNavLink {...rest} />
   ) : null;
@@ -55,7 +49,7 @@ class LayoutProvider extends React.Component {
 
 // Factory that generates a Route with specified strategy and layout
 export const getRoute = (
-  RouteStrategy_: RouteStrategy = RouteStrategy,
+  RouteStrategy_ = RouteStrategy,
   layout: any = null
 ): Function => {
   const routeStrategy = new RouteStrategy_();

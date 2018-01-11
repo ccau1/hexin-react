@@ -3,15 +3,15 @@ import DocumentTitle from "../Components/DocumentTitle";
 import ContentContainer from "../Components/ContentContainer";
 import Card from "../Components/Card";
 import { Row, Col } from "react-flexa";
-import H from "../Components/H";
-
-console.log("Card", Card, Card.Title);
+import H1 from "../Components/Dom/H1";
+import H2 from "../Components/Dom/H2";
+import H3 from "../Components/Dom/H3";
 
 export default () => (
   <DocumentTitle title={"Grid Page"}>
     <ContentContainer>
-      <H h={1}>Grid Page</H>
-      <H h={2}>12 Grid example</H>
+      <H1>Grid Page</H1>
+      <H2>12 Grid example</H2>
       <Row>
         <Col xs={2}>
           <Card>Col 2</Card>
@@ -32,7 +32,7 @@ export default () => (
           <Card>Col 2</Card>
         </Col>
       </Row>
-      <H h={2}>Responsive Grid</H>
+      <H2>Responsive Grid</H2>
       <Row>
         <Col xs={12} sm={3} md={4}>
           <Card>Col 1</Card>
@@ -44,7 +44,7 @@ export default () => (
           <Card>Col 3</Card>
         </Col>
       </Row>
-      <H h={2}>List Detail View Example</H>
+      <H2>List Detail View Example</H2>
       <Row gutter={0} style={{ height: "700px" }}>
         <Col
           xs={12}
@@ -78,7 +78,7 @@ export default () => (
               style={{ height: "250px" }}
             />
             <Card.Title>stuff</Card.Title>
-            <H h={3}>List Detail View Example</H>
+            <H3>List Detail View Example</H3>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae
             pharetra mi. Cras nunc nulla, vulputate malesuada libero ut, gravida
             porttitor tortor. Proin fermentum ullamcorper justo. Morbi sed enim

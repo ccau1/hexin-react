@@ -4,8 +4,8 @@ import { RouteStrategy } from "../Lib/route";
 export default class extends RouteStrategy {
   unAuthRedirect = "/login";
 
-  authenticate(roles: Array<string>): boolean {
-    console.log("roles", roles);
+  authenticate(roles: Array<string>, route): boolean {
+    // return true;
     return !roles || roles.indexOf("admin") === -1;
     // const user = store.getState().account.user;
     // let curUserRoles = [];

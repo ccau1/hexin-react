@@ -1,16 +1,8 @@
-/* @flow */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App, {preInit, init, postInit} from 'app';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-document.addEventListener('DOMContentLoaded', function() {
-  preInit()
-  .then(result => {
-    ReactDOM.render(
-      React.createElement(App),
-      document.getElementById('app'),
-      postInit,
-    );
-    init();
-  });
-});
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();

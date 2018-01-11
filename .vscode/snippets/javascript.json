@@ -38,87 +38,61 @@
   /* COMPONENT METHODS */
   "Set State": {
     "prefix": "sst",
-    "body": [
-      "this.setState({",
-      "  ${1}: $2",
-      "});$0"
-    ]
+    "body": ["this.setState({", "  ${1}: $2", "});$0"]
   },
 
   /* LIFECYCLE METHODS */
   "constructor": {
-    "prefix":"'cstt'",
-    "body": [
-      "constructor(props: Object): void {",
-      "super(props);",
-      "  $0",
-      "}"
-    ]
+    "prefix": "cstt",
+    "body": ["constructor(props) {", "  super(props);", "  $0", "}"]
   },
 
   "componentWillMount": {
     "prefix": "cwm",
-    "body": [
-      "componentWillMount(): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentWillMount() {", "  $0", "}"]
   },
 
   "componentDidMount": {
     "prefix": "cdm",
-    "body": [
-      "componentDidMount(): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentDidMount() {", "  $0", "}"]
   },
 
   "componentWillUnmount": {
     "prefix": "cwum",
-    "body": [
-      "componentWillUnmount(): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentWillUnmount() {", "  $0", "}"]
   },
 
   "shouldComponentUpdate": {
     "prefix": "scu",
-    "body": [
-      "shouldComponentUpdate(nextProps: Object, nextState: Object): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}"]
   },
 
   "componentWillUpdate": {
     "prefix": "cwu",
-    "body": [
-      "componentWillUpdate(nextProps: Object, nextState?: Object): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentWillUpdate(nextProps, nextState?) {", "  $0", "}"]
   },
 
   "componentDidUpdate": {
     "prefix": "cdu",
-    "body": [
-      "componentDidUpdate(prevProps: Object, prevState: Object): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}"]
   },
 
   "componentWillReceiveProps": {
     "prefix": "cwr",
-    "body": [
-      "componentWillReceiveProps(nextProps: Object): void {",
-      "  $0",
-      "}"
-    ]
+    "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}"]
   },
 
+  "React with Styles": {
+    "prefix": "rws",
+    "body": [
+      "import { css, withStyles } from \"../../Themes\";",
+      "export default withStyles(({ color, unit }) => ({",
+      "  container: {",
+      "    $0",
+      "  }",
+      "}))($1);"
+    ]
+  },
 
   /* REACT COMPONENTS */
   "R Container Component": {
@@ -133,7 +107,7 @@
       "import ${1:MyComponent} from './${1:MyComponent}';",
 
       "class ${1:MyComponent}Container extends React.Component {",
-      "  constructor(props: Object): void {",
+      "  constructor(props) {",
       "    super(props);$0",
       "  }",
       "",
@@ -144,13 +118,13 @@
       "  }",
       "}",
       "",
-      "function mapStateToProps(state: Object): {${2:MyProp}: ${3:Object}} {",
+      "function mapStateToProps(state): {${2:MyProp}: ${3:Object}} {",
       "  return {",
       "    ${2:MyProp}: state.${2:MyProp},",
       "  };",
       "}",
       "",
-      "function mapDispatchToProps(dispatch: Function): {Actions: Object} {",
+      "function mapDispatchToProps(dispatch: Function): {Actions} {",
       "  return {Actions: bindActionCreators(ActionCreators, dispatch)};",
       "}",
       "",
@@ -168,13 +142,13 @@
       "",
       "export default class ${1:MyComponent} extends Component {",
       "  static propTypes = {",
-      "    ${2}",
+      "  ${3}",
       "  };",
       "",
       "  render() {",
       "    return (",
       "      <div>",
-      "        ${0}",
+      "        ${2}",
       "      </div>",
       "    );",
       "  }",
@@ -190,7 +164,7 @@
       "",
       "import React from 'react';",
       "",
-      "export default (props: Object) => {",
+      "export default (props) => {",
       "  return (",
       "  <div>",
       "    ${1:Page Content}",
@@ -270,7 +244,7 @@
       "  static propTypes = {",
       "  };",
       "",
-      "  constructor(props: Object): void {",
+      "  constructor(props) {",
       "  super(props);",
       "  }",
       "",
@@ -320,7 +294,7 @@
       "  };",
       "}",
       "",
-      "function mapDispatchToProps(dispatch: Function): {Actions: Object} {",
+      "function mapDispatchToProps(dispatch: Function): {Actions} {",
       "  return {Actions: bindActionCreators(ActionCreators, dispatch)};",
       "}",
       "",
@@ -330,6 +304,17 @@
   },
 
   /* STYLES */
+
+  "Styled Component": {
+    "prefix": "styd",
+    "body": [
+      "import styled from \"styled-components\";",
+      "",
+      "export default styled.div`",
+      "  $0",
+      "`;"
+    ]
+  },
 
   "Stylesheet page": {
     "prefix": "stylesheet",

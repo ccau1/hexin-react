@@ -1,8 +1,19 @@
-/* @flow */
-import App, {store as appStore, preInit as preAppInit, postInit as postAppInit, init as appInit} from './App';
+import React, { Component } from "react";
+import Router from "./Router";
+import { ThemeProvider } from "styled-components";
+import theme from "../Themes";
+import DocumentTitle from "../Components/DocumentTitle";
 
-export let store = appStore;
-export const preInit = preAppInit;
-export const init = appInit;
-export const postInit = postAppInit;
+class App extends Component {
+  render() {
+    return (
+      <DocumentTitle prefix={"HEXIN: "} title={"loading..."}>
+        <ThemeProvider theme={theme}>
+          <Router />
+        </ThemeProvider>
+      </DocumentTitle>
+    );
+  }
+}
+
 export default App;

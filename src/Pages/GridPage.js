@@ -1,8 +1,8 @@
 import React from "react";
 import DocumentTitle from "../Components/DocumentTitle";
 import ContentContainer from "../Components/ContentContainer";
-import Card from "../Components/Card";
 import { Row, Col } from "react-flexa";
+import Card from "../Components/Card";
 import H1 from "../Components/Dom/H1";
 import H2 from "../Components/Dom/H2";
 import H3 from "../Components/Dom/H3";

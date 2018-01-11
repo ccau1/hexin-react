@@ -28,7 +28,6 @@
   "Index File": {
     "prefix": "imi",
     "body": [
-      "/* @flow */",
       "import ${1:MyComponent} from './${1:MyComponent}';",
       "$0",
       "export default ${1:MyComponent};"
@@ -98,8 +97,6 @@
   "R Container Component": {
     "prefix": "rcc",
     "body": [
-      "/* @flow */",
-      "",
       "import React from 'react';",
       "import {connect} from 'react-redux';",
       "import {bindActionCreators} from 'redux';",
@@ -136,8 +133,6 @@
   "R Component": {
     "prefix": "rc",
     "body": [
-      "/* @flow */",
-      "",
       "import React, {Component} from 'react';",
       "",
       "export default class ${1:MyComponent} extends Component {",
@@ -160,8 +155,6 @@
   "R Stateless Component": {
     "prefix": "rsc",
     "body": [
-      "/* @flow */",
-      "",
       "import React from 'react';",
       "",
       "export default (props) => {",
@@ -178,7 +171,6 @@
   "R Redux Form Component": {
     "prefix": "rrfc",
     "body": [
-      "/* @flow */",
       "import React, {Component} from 'react';",
       "import {reduxForm, Field} from 'redux-form';",
       "import {",
@@ -231,8 +223,6 @@
   "RN Component": {
     "prefix": "rnc'",
     "body": [
-      "/* @flow */",
-      "",
       "import React, {Component} from 'react';",
       "import {",
       "  View,",
@@ -265,8 +255,6 @@
   "RN Container Component": {
     "prefix": "rncc'",
     "body": [
-      "/* @flow */",
-      "",
       "import React, {Component} from 'react';",
       "import {connect} from 'react-redux';",
       "import {bindActionCreators} from 'redux';",
@@ -319,8 +307,6 @@
   "Stylesheet page": {
     "prefix": "stylesheet",
     "body": [
-      "/* @flow */",
-      "",
       "module.exports = require('react-native').StyleSheet.create({",
       "  $1",
       "});"
@@ -332,8 +318,6 @@
   "Intl Messages": {
     "prefix": "imsg",
     "body": [
-      "/* @flow */",
-      "",
       "import {defineMessages} from 'react-intl';",
       "",
       "export default defineMessages({",

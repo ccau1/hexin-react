@@ -14,6 +14,9 @@ const Nav = ({ history, styles }) => {
       <NavItem exact to="/">
         Home
       </NavItem>
+      <NavItem exact to="/localisation">
+        Localisation
+      </NavItem>
       <NavItem to="/about" auth={["member", "admin"]}>
         About
       </NavItem>

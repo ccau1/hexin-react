@@ -1,10 +1,13 @@
 const theme = {
   color: {
     primary: "rgb(45, 52, 70)",
-    secondary: "#00A699",
+    primaryHighlight: "rgb(87, 101, 142)",
     primaryText: "#f3f3f3",
     primaryHighlightText: "#fff",
+    secondary: "rgb(0,166,153)",
+    secondaryHighlight: "rgb(86, 214, 204)",
     secondaryText: "#f3f3f3",
+    secondaryHighlightText: "#fff",
     background: "#fdfdfd",
     contentBackground: "#fff"
   },

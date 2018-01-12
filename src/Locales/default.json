@@ -1,3 +1,10 @@
 {
-  "languageSwitcher.label": "Language Switcher"
+  "languageSwitcher.label": "Language Switcher",
+  "nav.about": "About",
+  "nav.home": "Home",
+  "nav.localisation": "Localisation",
+  "nav.components": "Components",
+  "nav.grid": "Grid",
+  "nav.typography": "Typography",
+  "nav.landingpage": "Landing Page"
 }

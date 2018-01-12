@@ -1,18 +1,22 @@
 import React from "react";
 import { IntlProvider, addLocaleData } from "react-intl";
-import intl_en from "react-intl/locale-data/en";
-import intl_zh from "react-intl/locale-data/zh";
+import { connect } from "react-redux";
+import en from "react-intl/locale-data/en";
+import zh from "react-intl/locale-data/zh";
 
-// Our translated strings
-import en from "./../Locales/default.json";
-import zh from "./../Locales/zh.json";
+addLocaleData([...en, ...zh]);
 
-addLocaleData([...intl_en, ...intl_zh]);
-
-export default ({ children }) => {
+const Intl = ({ intl, children }) => {
+  console.log("intl intl", intl);
   return (
-    <IntlProvider locale={"en"} messages={en}>
+    <IntlProvider key={intl.locale} {...intl}>
       {children}
     </IntlProvider>
   );
 };
+
+export default connect(state => {
+  return {
+    intl: state.intl
+  };
+})(Intl);

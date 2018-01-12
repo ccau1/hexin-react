@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NavItem from "./NavItem";
 import NavItemGroup from "./NavItemGroup";
+import IntlMessages from "../../Components/IntlMessages";
 
 const NavContainer = styled.div`
   color: ${props => props.theme.color.primary};
@@ -12,19 +13,25 @@ const Nav = ({ history, styles }) => {
   return (
     <NavContainer>
       <NavItem exact to="/">
-        Home
+        <IntlMessages id={"nav.home"} />
       </NavItem>
       <NavItem exact to="/localisation">
-        Localisation
+        <IntlMessages id={"nav.localisation"} />
       </NavItem>
       <NavItem to="/about" auth={["member", "admin"]}>
-        About
+        <IntlMessages id={"nav.about"} />
       </NavItem>
-      <NavItemGroup label={"Components"}>
-        <NavItem to="/grid">Grid</NavItem>
-        <NavItem to="/typography">Typography</NavItem>
+      <NavItemGroup label={<IntlMessages id={"nav.components"} />}>
+        <NavItem to="/grid">
+          <IntlMessages id={"nav.grid"} />
+        </NavItem>
+        <NavItem to="/typography">
+          <IntlMessages id={"nav.typography"} />
+        </NavItem>
       </NavItemGroup>
-      <NavItem to="/landing-page">Landing Page</NavItem>
+      <NavItem to="/landing-page">
+        <IntlMessages id={"nav.landingpage"} />
+      </NavItem>
     </NavContainer>
   );
 };

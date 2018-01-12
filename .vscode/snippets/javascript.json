@@ -4,7 +4,6 @@
     "body": "console.log('$1');$0"
   },
 
-  /* IMPORTS */
   "Import File": {
     "prefix": "im",
     "body": "import ${1} from '${2}${1}';$0"
@@ -34,13 +33,11 @@
     ]
   },
 
-  /* COMPONENT METHODS */
   "Set State": {
     "prefix": "sst",
     "body": ["this.setState({", "  ${1}: $2", "});$0"]
   },
 
-  /* LIFECYCLE METHODS */
   "constructor": {
     "prefix": "cstt",
     "body": ["constructor(props) {", "  super(props);", "  $0", "}"]
@@ -81,19 +78,6 @@
     "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}"]
   },
 
-  "React with Styles": {
-    "prefix": "rws",
-    "body": [
-      "import { css, withStyles } from \"../../Themes\";",
-      "export default withStyles(({ color, unit }) => ({",
-      "  container: {",
-      "    $0",
-      "  }",
-      "}))($1);"
-    ]
-  },
-
-  /* REACT COMPONENTS */
   "R Container Component": {
     "prefix": "rcc",
     "body": [
@@ -157,131 +141,6 @@
     ]
   },
 
-  "R Redux Form Component": {
-    "prefix": "rrfc",
-    "body": [
-      "import React, {Component} from 'react';",
-      "import {reduxForm, Field} from 'redux-form';",
-      "import {",
-      "  TextField,",
-      "} from 'redux-form-material-ui';",
-      "import {RaisedButton, FlatButton} from 'material-ui';",
-      "import {FormattedMessage} from 'react-intl';",
-      "import messages from './messages';",
-      "",
-      "const validate = values => {",
-      "  const errors = {};",
-      "",
-      "",
-      "",
-      "  return errors;",
-      "};",
-      "",
-      "class ${1:Component}Form extends Component {",
-      "  static propTypes = {",
-      "",
-      "  };",
-      "",
-      "  render() {",
-      "    const {error, handleSubmit, pristine, reset, submitting} = this.props;",
-      "    return (",
-      "      <form onSubmit={handleSubmit}>",
-      "      {error && <strong>{error}</strong>}",
-      "        <div>",
-      "          <Field name=\"username\" component={TextField} floatingLabelText={<FormattedMessage {...messages.username} />} />",
-      "        </div>",
-      "        $0",
-      "        <br />",
-      "        <br />",
-      "        <RaisedButton type=\"submit\" disabled={submitting} primary={true}>Login</RaisedButton>",
-      "        <FlatButton disabled={pristine || submitting} onClick={reset}>Clear</FlatButton>",
-      "      </form>",
-      "    );",
-      "  }",
-      "}",
-      "",
-      "export default reduxForm({",
-      "  form: '${1:Component}',",
-      "  validate,",
-      "})(${1:Component}Form);",
-      ""
-    ]
-  },
-
-  /* REACT NATIVE COMPONENTS */
-  "RN Component": {
-    "prefix": "rnc'",
-    "body": [
-      "import React, {Component} from 'react';",
-      "import {",
-      "  View,",
-      "} from 'react-native';",
-      "import styles from './styles';",
-      "",
-      "class ${1:MyComponent} extends Component {",
-      "",
-      "  static propTypes = {",
-      "  };",
-      "",
-      "  constructor(props) {",
-      "  super(props);",
-      "  }",
-      "",
-      "  render() {",
-      "  return (",
-      "    <View style={styles.container}>",
-      "    $2",
-      "    </View>",
-      "  );",
-      "  }",
-      "}",
-      "",
-      "export default ${1:MyComponent};",
-      ""
-    ]
-  },
-
-  "RN Container Component": {
-    "prefix": "rncc'",
-    "body": [
-      "import React, {Component} from 'react';",
-      "import {connect} from 'react-redux';",
-      "import {bindActionCreators} from 'redux';",
-      "import {ActionCreators} from 'src/actions';",
-      "import {State} from 'src/types';",
-      "",
-      "import ${1:MyComponent} from './${1:MyComponent}';",
-      "",
-      "class ${1:MyComponent}Container extends Component {",
-      "  static PropTypes = {",
-      "",
-      "  };",
-      "",
-      "  render() {",
-      "  return (",
-      "    <${1:MyComponent} />",
-      "  );",
-      "  }",
-      "}",
-      "",
-      "",
-      "function mapStateToProps(state: State): {${2:MyProp}: ${3:Object}} {",
-      "  return {",
-      "    ${2:MyProp}: state.${2:MyProp},",
-      "  };",
-      "}",
-      "",
-      "function mapDispatchToProps(dispatch: Function): {Actions} {",
-      "  return {Actions: bindActionCreators(ActionCreators, dispatch)};",
-      "}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:MyComponent}Container);",
-      ""
-    ]
-  },
-
-  /* STYLES */
-
   "Styled Component": {
     "prefix": "styd",
     "body": [
@@ -292,17 +151,6 @@
       "`;"
     ]
   },
-
-  "Stylesheet page": {
-    "prefix": "stylesheet",
-    "body": [
-      "module.exports = require('react-native').StyleSheet.create({",
-      "  $1",
-      "});"
-    ]
-  },
-
-  /* MESSAGES */
 
   "Intl Messages": {
     "prefix": "imsg",

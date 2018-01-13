@@ -2,7 +2,7 @@ import React from "react";
 
 import DocumentTitle from "../Components/DocumentTitle";
 import ContentContainer from "../Components/ContentContainer";
-import H1 from "../Components/Dom/H1";
+import H1 from "../Components/H1";
 import IntlMessages from "../Components/IntlMessages";
 import LocaleSwitcher from "../Containers/LocaleSwitcher";
 

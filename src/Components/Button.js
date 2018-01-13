@@ -2,13 +2,27 @@ import React from "react";
 import styled from "styled-components";
 
 export const DefaultButton = styled.button`
+  position: relative;
   padding: 10px;
+  min-width: 100px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  cursor: pointer;
   background-color: ${props =>
     props.active ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0)"};
   &:focus {
     outline: 0;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover:after {
+    background-color: rgba(255, 255, 255, 0.05);
   }
 `;
 export const SecondaryButton = styled(DefaultButton)`

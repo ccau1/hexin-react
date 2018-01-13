@@ -3,9 +3,9 @@ import DocumentTitle from "../Components/DocumentTitle";
 import ContentContainer from "../Components/ContentContainer";
 import { Row, Col } from "react-flexa";
 import Card from "../Components/Card";
-import H1 from "../Components/Dom/H1";
-import H2 from "../Components/Dom/H2";
-import H3 from "../Components/Dom/H3";
+import H1 from "../Components/H1";
+import H2 from "../Components/H2";
+import H3 from "../Components/H3";
 
 export default () => (
   <DocumentTitle title={"Grid Page"}>

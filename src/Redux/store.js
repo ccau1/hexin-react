@@ -1,11 +1,17 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
+import { routerMiddleware } from "react-router-redux";
 
-export default (rootReducer, rootSaga) => {
+export default (rootReducer, rootSaga, browserHistory) => {
   /* ------------- Redux Configuration ----------------- */
 
   const middleware = [];
   const enhancers = [];
+
+  /* ------------- Router Middleware ------------------- */
+
+  const routingMiddleware = routerMiddleware(browserHistory);
+  middleware.push(routingMiddleware);
 
   /* ------------- Saga Middleware --------------------- */
 

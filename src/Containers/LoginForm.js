@@ -7,6 +7,7 @@ import Button from "../Components/Button";
 import Error from "../Components/Error";
 import { FormActions } from "../Redux/Forms/actions";
 import { AccountActions } from "../Redux/Account/actions";
+
 class LoginFormContainer extends React.Component {
   updateForm(field, val) {
     const { form, setForm } = this.props;
@@ -14,15 +15,22 @@ class LoginFormContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser) {
-      const { history } = this.props;
-      history.push("/");
-    }
+    // if (nextProps.currentUser) {
+    //   const { history } = this.props;
+    //   history.push("/");
+    // }
+  }
+
+  getRedirectFromLocation(location) {
+    const params = new URLSearchParams(location.search);
+    return params.get("redirect");
   }
   render() {
-    const { updateForm } = this;
-    const { onLogin, form, errors } = this.props;
+    const { updateForm, getRedirectFromLocation } = this;
+    const { onLogin, form, errors, location } = this.props;
     const { username, password } = form;
+
+    const redirect = getRedirectFromLocation(location);
 
     return (
       <div>
@@ -40,7 +48,9 @@ class LoginFormContainer extends React.Component {
           onChange={updateForm.bind(this, "password")}
         />
         <Error name="password" errors={errors} />
-        <Button.Primary onClick={onLogin.bind(this, username, password)}>
+        <Button.Primary
+          onClick={onLogin.bind(this, username, password, redirect)}
+        >
           Sign In
         </Button.Primary>
       </div>

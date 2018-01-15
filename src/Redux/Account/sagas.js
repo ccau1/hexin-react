@@ -2,10 +2,11 @@ import { all, takeLatest, call, put } from "redux-saga/effects";
 import { AccountActions, AccountTypes } from "./actions";
 import { LoadingActions } from "../Loading/actions";
 import { ErrorActions } from "../Error/actions";
+import { push } from "react-router-redux";
 
 export function* login(api, action) {
   // yield _setLoadingAndErrors(true);
-  const { username, password } = action;
+  const { username, password, redirect } = action;
 
   // make the call to the api
   let tokenResponse = yield call(api.getToken, username, password);
@@ -29,6 +30,8 @@ export function* login(api, action) {
   }
   yield put(LoadingActions.toggleLogin(false));
   ErrorActions.setLoginError(null);
+  console.log("pppp", redirect);
+  yield put(push(redirect || "/"));
 }
 
 export default function* roots(api) {

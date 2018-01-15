@@ -7,7 +7,6 @@ import zh from "react-intl/locale-data/zh";
 addLocaleData([...en, ...zh]);
 
 const Intl = ({ intl, children }) => {
-  console.log("intl intl", intl);
   return (
     <IntlProvider key={intl.locale} {...intl}>
       {children}

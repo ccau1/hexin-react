@@ -32,6 +32,7 @@ export default () => (
       path="/"
       exact
       component={PageLazyload(() => import("../Pages/HomePage"))} // This will help lazy loading the page
+      auth={["loggedIn"]}
     />
     <RouteLayout path="/about" component={AboutPage} />
     <RouteLayout path="/grid" component={GridPage} />

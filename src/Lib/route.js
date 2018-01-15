@@ -73,7 +73,8 @@ export const getRoute = (
         {...rest}
         render={renderProps => {
           if (auth) {
-            if (routeStrategy.authenticate(auth)) {
+            console.log("hitt", auth, routeStrategy.authenticate(auth, rest));
+            if (routeStrategy.authenticate(auth, rest)) {
               return returnRoute(Component || render, renderProps, layout);
             } else {
               const RedirectComponent = withRouter(({ location }) => (

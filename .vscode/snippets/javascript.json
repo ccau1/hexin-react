@@ -84,8 +84,7 @@
       "import React from 'react';",
       "import {connect} from 'react-redux';",
       "import {bindActionCreators} from 'redux';",
-      "import ${1:MyComponent} from './${1:MyComponent}';",
-
+      "",
       "class ${1:MyComponent}Container extends React.Component {",
       "  render() {",
       "    return (",

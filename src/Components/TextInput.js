@@ -1,6 +1,9 @@
+import React from "react";
 import styled from "styled-components";
 
-export default styled.input`
+const InputContainer = styled.div``;
+
+const Input = styled.input`
   height: 42px;
   padding: 6px 10px;
   cursor: text;
@@ -30,3 +33,41 @@ export default styled.input`
   display: inline-block;
   width: 100%;
 `;
+
+export default class TextInput extends React.Component {
+  static defaultProps = {
+    onChange: () => true
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ""
+    };
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.value !== this.props.value) {
+      this.setState({
+        text: nextProps.value
+      });
+    }
+  }
+
+  onChange = ev => {
+    const { onChange } = this.props;
+    const value = ev.target.value;
+    onChange(value);
+    this.setState({
+      text: value
+    });
+  };
+
+  render() {
+    const { onChange } = this;
+    const { text } = this.state;
+    return (
+      <InputContainer>
+        <Input {...this.props} value={text} onChange={onChange} />
+      </InputContainer>
+    );
+  }
+}

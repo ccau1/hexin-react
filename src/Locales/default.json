@@ -1,5 +1,6 @@
 {
   "languageSwitcher.label": "Language Switcher",
+  "error.required": "This is required",
   "nav.about": "About",
   "nav.home": "Home",
   "nav.localisation": "Localisation",

@@ -27,7 +27,6 @@ const Input = styled.input`
   transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   box-sizing: border-box;
   margin: 0;
-  margin-bottom: 15px;
   list-style: none;
   position: relative;
   display: inline-block;

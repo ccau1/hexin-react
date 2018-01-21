@@ -1,5 +1,6 @@
 {
   "languageSwitcher.label": "語言切換",
+  "error.required": "這是必需的",
   "nav.about": "關於",
   "nav.home": "主頁",
   "nav.localisation": "語言",

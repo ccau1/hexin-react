@@ -7,6 +7,8 @@ import Form from "../Form/Form";
 import Errors from "../Form/Errors";
 import { FormattedMessage } from "react-intl";
 
+export const FORM_NAME = "login";
+
 const validate = values => {
   const errors = {};
 
@@ -22,9 +24,18 @@ const validate = values => {
   return errors;
 };
 
-const LoginForm = ({ onSubmit, form, onSubmitSuccess }) => {
+const LoginForm = ({
+  onSubmit,
+  form,
+  onSubmitSuccess,
+  onSubmitFail = () => true
+}) => {
   return (
-    <Form onSubmit={onSubmit} onSubmitSuccess={onSubmitSuccess}>
+    <Form
+      onSubmit={onSubmit}
+      onSubmitSuccess={onSubmitSuccess}
+      onSubmitFail={onSubmitFail}
+    >
       <Errors />
       <TextInput name="username" label="Username" />
       <TextInput name="password" label="Password" type="password" />
@@ -35,7 +46,7 @@ const LoginForm = ({ onSubmit, form, onSubmitSuccess }) => {
 };
 
 export default reduxForm({
-  form: "login",
+  form: FORM_NAME,
   validate,
   initialValues: {
     rememberMe: true

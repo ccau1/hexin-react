@@ -9,16 +9,32 @@ class Form extends React.Component {
     onSubmitSuccess: PropTypes.func
   };
 
+  static defaultProps = {
+    onSubmitSuccess: () => true,
+    onSubmitFail: () => true
+  };
+
   static contextTypes = {
     _reduxForm: PropTypes.object
   };
 
   componentWillReceiveProps(nextProps) {
     if (
-      nextProps.formSucceed !== this.props.formSucceed &&
-      nextProps.formSucceed
+      nextProps.formSubmitting !== this.props.formSubmitting &&
+      !nextProps.formSubmitting
     ) {
-      nextProps._reduxForm.onSubmitSuccess();
+      // form is now done submitting, call success or fail listener
+      if (nextProps.formSucceed) {
+        // if form succeeded, trigger onSubmitSuccess event
+        if (nextProps._reduxForm.onSubmitSuccess) {
+          nextProps._reduxForm.onSubmitSuccess();
+        }
+      } else if (nextProps.formFailed) {
+        // if form failed, trigger onSubmitFail event
+        if (nextProps._reduxForm.onSubmitFail) {
+          nextProps._reduxForm.onSubmitFail(nextProps.formError);
+        }
+      }
     }
   }
 
@@ -35,7 +51,16 @@ class Form extends React.Component {
 const mapStateToProps = (state, ownProps) => ({
   formSucceed:
     state.form[ownProps._reduxForm.form] &&
-    state.form[ownProps._reduxForm.form].submitSucceeded
+    state.form[ownProps._reduxForm.form].submitSucceeded,
+  formFailed:
+    state.form[ownProps._reduxForm.form] &&
+    state.form[ownProps._reduxForm.form].submitFailed,
+  formSubmitting:
+    state.form[ownProps._reduxForm.form] &&
+    state.form[ownProps._reduxForm.form].submitting,
+  formError:
+    state.form[ownProps._reduxForm.form] &&
+    state.form[ownProps._reduxForm.form].error
 });
 
 export default withContext({ _reduxForm: PropTypes.object })(

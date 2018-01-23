@@ -17,14 +17,23 @@ class LoginFormContainer extends React.Component {
     const redirect = getRedirectFromLocation(location);
     history.push(redirect || "/");
   };
+  onSubmitFail = err => {
+    console.log("err", err);
+  };
   onSubmit = form => {
     const { onLogin } = this.props;
     onLogin(form.username, form.password, form.rememberMe);
   };
   render() {
-    const { onSubmitSuccess, onSubmit } = this;
+    const { onSubmitSuccess, onSubmitFail, onSubmit } = this;
 
-    return <LoginForm onSubmit={onSubmit} onSubmitSuccess={onSubmitSuccess} />;
+    return (
+      <LoginForm
+        onSubmit={onSubmit}
+        onSubmitSuccess={onSubmitSuccess}
+        onSubmitFail={onSubmitFail}
+      />
+    );
   }
 }
 

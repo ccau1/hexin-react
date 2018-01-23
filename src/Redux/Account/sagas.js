@@ -1,45 +1,43 @@
 import { all, takeLatest, call, put } from "redux-saga/effects";
 import { AccountActions, AccountTypes } from "./actions";
 import { startSubmit, stopSubmit } from "redux-form";
+import { FORM_NAME } from "../../Components/App/LoginForm";
+import { getErrorFromResponse } from "../utils/saga";
 
 export function* login(api, action) {
-  // yield _setLoadingAndErrors(true);
+  // Fetch fields from action
   const { username, password } = action;
 
-  const FORM_LOGIN = "login";
-  yield put(startSubmit(FORM_LOGIN));
-  // make the call to the api
+  // Start form submit
+  yield put(startSubmit(FORM_NAME));
+
+  // Fetch token based on action username & password
   let tokenResponse = yield call(api.getToken, username, password);
 
+  // If response not okay, throw form error
   if (!tokenResponse.ok) {
-    if (!tokenResponse.status) {
-      yield put(stopSubmit(FORM_LOGIN, { errors: "server down" }));
-    } else if (tokenResponse.status === 400) {
-      yield put(
-        stopSubmit(
-          FORM_LOGIN,
-          typeof tokenResponse.data === "string"
-            ? { _error: tokenResponse.data }
-            : tokenResponse.data
-        )
-      );
-    } else {
-      yield put(
-        stopSubmit(FORM_LOGIN, { username: "username/password incorrect" })
-      );
-    }
+    yield put(
+      stopSubmit(FORM_NAME, getErrorFromResponse(FORM_NAME, tokenResponse))
+    );
     return;
   }
-  // store token
+  // Store token
   api.self.setHeader("Authorization", "bearer " + tokenResponse.data.token);
   yield put(AccountActions.setToken(tokenResponse.data.token));
 
+  // Fetch user based on the token
   const userResponse = yield call(api.getAccountUser);
-  if (userResponse.ok) {
-    // store user
-    yield put(AccountActions.setUser(userResponse.data));
+  // If response not okay, throw form error
+  if (!userResponse.ok) {
+    yield put(
+      stopSubmit(FORM_NAME, getErrorFromResponse(FORM_NAME, userResponse))
+    );
+    return;
   }
-  yield put(stopSubmit("login"));
+  // Set user
+  yield put(AccountActions.setUser(userResponse.data));
+  // Stop submit
+  yield put(stopSubmit(FORM_NAME));
 }
 
 export default function* roots(api) {

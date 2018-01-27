@@ -1,7 +1,10 @@
+const unit = 1;
+
 const theme = {
   color: {
     primary: "rgb(45, 52, 70)",
     primaryHighlight: "rgb(87, 101, 142)",
+    primaryDisabled: "rgb(214, 217, 226)",
     primaryText: "#f3f3f3",
     primaryHighlightText: "#fff",
     secondary: "rgb(0,166,153)",
@@ -11,7 +14,7 @@ const theme = {
     background: "#fdfdfd",
     contentBackground: "#fff"
   },
-  unit: 1,
+  unit,
   fonts: {
     fontFamily: "Roboto, sans-serif",
     size: {
@@ -41,9 +44,15 @@ const theme = {
       h6: "#1a1a1a",
       p: "#545454"
     }
+  },
+  measurements: {
+    padding: 20 * unit,
+    loading: {
+      width: 100 * unit,
+      height: 100 * unit
+    }
   }
 };
-theme.screenPadding = 20 * theme.unit;
 
 theme.flexa = {
   columns: 12,

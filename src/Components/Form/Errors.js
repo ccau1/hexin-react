@@ -14,7 +14,6 @@ class Errors extends React.Component {
 
   render() {
     const { error } = this.context._reduxForm;
-    console.log("error", error);
     if (Array.isArray(error)) {
       return error.map((err, errIndex) => (
         <ErrorMessage key={errIndex}>{err}</ErrorMessage>

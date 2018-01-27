@@ -9,10 +9,10 @@ const Card = styled.div`
 `;
 
 Card.Title = NavBar.extend`
-  margin: ${props => "-" + props.theme.screenPadding + "px"};
+  margin: ${props => "-" + props.theme.measurements.padding + "px"};
   margin-bottom: 0;
   margin-top: ${props =>
-    props.top ? "-" + props.theme.screenPadding + "px" : 0};
+    props.top ? "-" + props.theme.measurements.padding + "px" : 0};
 `;
 
 // TODO:: this does not handle top margin. if item is Card's first child, it'll have extra padding at top.
@@ -21,10 +21,10 @@ Card.Image = styled.div`
   background-image: url('${props => props.src}');
   background-repeat: no-repeat;
   background-size: cover;
-  margin: ${props => "-" + props.theme.screenPadding + "px"};
+  margin: ${props => "-" + props.theme.measurements.padding + "px"};
   margin-bottom: 0;
   margin-top: ${props =>
-    props.top ? "-" + props.theme.screenPadding + "px" : 0};
+    props.top ? "-" + props.theme.measurements.padding + "px" : 0};
   height: 200px;
 `;
 

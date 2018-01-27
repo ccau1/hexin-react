@@ -17,6 +17,7 @@ import TypographyPage from "../Pages/TypographyPage";
 import LandingPage from "../Pages/LandingPage";
 import LocalisationPage from "../Pages/LocalisationPage";
 import LoginPage from "../Pages/LoginPage";
+import TodosPage from "../Pages/TodosPage";
 
 const Loader = () => <div>Loading...</div>;
 const PageLazyload = Lazyload(Loader);
@@ -36,6 +37,7 @@ export default () => (
     />
     <RouteLayout path="/about" component={AboutPage} />
     <RouteLayout path="/grid" component={GridPage} />
+    <RouteLayout path="/todos" component={TodosPage} />
     <RouteLayout path="/typography" component={TypographyPage} />
     <RouteLayout path="/localisation" component={LocalisationPage} />
     <RouteLandingLayout path="/landing-page" component={LandingPage} />

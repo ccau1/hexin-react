@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 export const DefaultButton = styled.button`
   position: relative;
-  padding: 10px;
-  min-width: 100px;
+  padding: ${props => (props.round ? "6px" : "10px")};
+  min-width: ${props => (props.round ? "0px" : "100px")};
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: ${props => (props.round ? "50%" : "8px")};
   cursor: pointer;
   background-color: ${props =>
     props.active ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0)"};

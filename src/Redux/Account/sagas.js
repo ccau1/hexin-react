@@ -1,15 +1,15 @@
 import { all, takeLatest, call, put } from "redux-saga/effects";
 import { AccountActions, AccountTypes } from "./actions";
 import { startSubmit, stopSubmit } from "redux-form";
-import { FORM_NAME } from "../../Components/App/LoginForm";
 import { getErrorFromResponse } from "../utils/saga";
+import Form from "../../Constants/Form";
 
 export function* login(api, action) {
   // Fetch fields from action
   const { username, password } = action;
 
   // Start form submit
-  yield put(startSubmit(FORM_NAME));
+  yield put(startSubmit(Form.LOGIN));
 
   // Fetch token based on action username & password
   let tokenResponse = yield call(api.getToken, username, password);
@@ -17,7 +17,7 @@ export function* login(api, action) {
   // If response not okay, throw form error
   if (!tokenResponse.ok) {
     yield put(
-      stopSubmit(FORM_NAME, getErrorFromResponse(FORM_NAME, tokenResponse))
+      stopSubmit(Form.LOGIN, getErrorFromResponse(Form.LOGIN, tokenResponse))
     );
     return;
   }
@@ -30,14 +30,14 @@ export function* login(api, action) {
   // If response not okay, throw form error
   if (!userResponse.ok) {
     yield put(
-      stopSubmit(FORM_NAME, getErrorFromResponse(FORM_NAME, userResponse))
+      stopSubmit(Form.LOGIN, getErrorFromResponse(Form.LOGIN, userResponse))
     );
     return;
   }
   // Set user
   yield put(AccountActions.setUser(userResponse.data));
   // Stop submit
-  yield put(stopSubmit(FORM_NAME));
+  yield put(stopSubmit(Form.LOGIN));
 }
 
 export default function* roots(api) {

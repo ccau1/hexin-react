@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { withRouter } from "react-router";
 import { AccountActions } from "../Redux/Account/actions";
 import LoginForm from "../Components/App/LoginForm";
+import { auth, googleAuthProvider } from "../Services/firebase";
 
 class LoginFormContainer extends React.Component {
   getRedirectFromLocation(location) {
@@ -28,11 +29,16 @@ class LoginFormContainer extends React.Component {
     const { onSubmitSuccess, onSubmitFail, onSubmit } = this;
 
     return (
-      <LoginForm
-        onSubmit={onSubmit}
-        onSubmitSuccess={onSubmitSuccess}
-        onSubmitFail={onSubmitFail}
-      />
+      <div>
+        <LoginForm
+          onSubmit={onSubmit}
+          onSubmitSuccess={onSubmitSuccess}
+          onSubmitFail={onSubmitFail}
+        />
+        <button onClick={() => auth.signInWithPopup(googleAuthProvider)}>
+          Signup/Login
+        </button>
+      </div>
     );
   }
 }

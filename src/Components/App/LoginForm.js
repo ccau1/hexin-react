@@ -6,8 +6,7 @@ import TextInput from "../Form/TextInput";
 import Form from "../Form/Form";
 import Errors from "../Form/Errors";
 import { FormattedMessage } from "react-intl";
-
-export const FORM_NAME = "login";
+import FormName from "../../Constants/Form";
 
 const validate = values => {
   const errors = {};
@@ -46,7 +45,7 @@ const LoginForm = ({
 };
 
 export default reduxForm({
-  form: FORM_NAME,
+  form: FormName.LOGIN,
   validate,
   initialValues: {
     rememberMe: true

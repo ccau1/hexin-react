@@ -52,6 +52,9 @@ export default ({ todos, onItemClick, onDeleteClick }) => {
             <TodoContent isComplete={todo.isComplete}>
               <H5>{todo.task}</H5>
               <P>{todo.createdAt.toString()}</P>
+              {todo.lastModified !== undefined && (
+                <P>{todo.lastModified.toString()}</P>
+              )}
             </TodoContent>
             <RightPanel>
               <Button.Secondary onClick={_onDeleteClick.bind(this, todo)}>

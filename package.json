@@ -6,6 +6,8 @@
     "aphrodite": "^1.2.5",
     "apisauce": "^0.14.3",
     "firebase": "^4.9.0",
+    "firebase-admin": "^5.8.1",
+    "firebase-functions": "^0.8.1",
     "history": "^4.7.2",
     "ramda": "^0.25.0",
     "react": "^16.2.0",

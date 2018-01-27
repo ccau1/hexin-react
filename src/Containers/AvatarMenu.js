@@ -10,6 +10,9 @@ const MenuItem = styled(Card)`
   min-width: 150px;
   padding: 10px;
   cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 `;
 class AvatarMenu extends React.Component {
   logout = () => {

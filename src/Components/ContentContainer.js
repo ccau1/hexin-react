@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export default styled.div`
   padding: ${props =>
-    props.theme.screenPadding +
+    props.theme.measurements.padding +
     "px " +
-    props.theme.screenPadding +
+    props.theme.measurements.padding +
     "px " +
-    props.theme.screenPadding * 3 +
+    props.theme.measurements.padding * 3 +
     "px " +
-    props.theme.screenPadding +
+    props.theme.measurements.padding +
     "px"};
   flex: 1;
 `;

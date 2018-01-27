@@ -19,7 +19,7 @@ const NavItemGroupButton = styled.div`
   display: block;
   cursor: pointer;
   padding: ${props => 10 * props.theme.unit + "px"}
-    ${props => props.theme.screenPadding * props.theme.unit + "px"};
+    ${props => props.theme.measurements.padding + "px"};
   background-color: transparent;
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);

@@ -24,6 +24,11 @@ export const DefaultButton = styled.button`
   &:hover:after {
     background-color: rgba(255, 255, 255, 0.05);
   }
+  &:disabled {
+    cursor: default;
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 `;
 export const SecondaryButton = styled(DefaultButton)`
   background-color: ${props =>
@@ -34,6 +39,11 @@ export const SecondaryButton = styled(DefaultButton)`
     props.active
       ? props.theme.color.secondaryHighlightText
       : props.theme.color.secondaryText};
+  &:disabled {
+    cursor: default;
+    border-color: ${props => props.theme.color.secondaryDisabled};
+    background-color: ${props => props.theme.color.secondaryDisabled};
+  }
 `;
 export const PrimaryButton = styled(DefaultButton)`
   background-color: ${props =>
@@ -44,6 +54,11 @@ export const PrimaryButton = styled(DefaultButton)`
     props.active
       ? props.theme.color.primaryHighlightText
       : props.theme.color.primaryText};
+  &:disabled {
+    cursor: default;
+    border-color: ${props => props.theme.color.primaryDisabled};
+    background-color: ${props => props.theme.color.primaryDisabled};
+  }
 `;
 
 const Button = ({ primary, secondary, ...rest }) => {

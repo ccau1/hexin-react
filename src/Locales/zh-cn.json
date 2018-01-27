@@ -1,11 +1,12 @@
 {
-  "languageSwitcher.label": "语言切换",
   "error.required": "这是必需的",
+  "languageSwitcher.label": "语言切换",
   "nav.about": "关于",
-  "nav.home": "主页",
-  "nav.localisation": "语言",
   "nav.components": "组件",
+  "nav.home": "主页",
   "nav.grid": "网格",
-  "nav.typography": "活版印刷",
-  "nav.landingpage": "登陆页面"
+  "nav.landingpage": "登陆页面",
+  "nav.localisation": "语言",
+  "nav.todos": "待办事项",
+  "nav.typography": "活版印刷"
 }

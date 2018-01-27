@@ -1,11 +1,12 @@
 {
-  "languageSwitcher.label": "Language Switcher",
   "error.required": "This is required",
+  "languageSwitcher.label": "Language Switcher",
   "nav.about": "About",
-  "nav.home": "Home",
-  "nav.localisation": "Localisation",
   "nav.components": "Components",
+  "nav.home": "Home",
   "nav.grid": "Grid",
-  "nav.typography": "Typography",
-  "nav.landingpage": "Landing Page"
+  "nav.landingpage": "Landing Page",
+  "nav.localisation": "Localisation",
+  "nav.todos": "Todos",
+  "nav.typography": "Typography"
 }

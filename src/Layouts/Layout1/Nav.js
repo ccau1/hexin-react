@@ -21,6 +21,9 @@ const Nav = ({ history, styles }) => {
       <NavItem to="/about" auth={["member", "admin"]}>
         <IntlMessages id={"nav.about"} />
       </NavItem>
+      <NavItem to="/todos">
+        <IntlMessages id={"nav.todos"} />
+      </NavItem>
       <NavItemGroup label={<IntlMessages id={"nav.components"} />}>
         <NavItem to="/grid">
           <IntlMessages id={"nav.grid"} />

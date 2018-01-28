@@ -14,9 +14,9 @@ const NavContainer = styled.div`
   }
 `;
 
-const Nav = ({ history, styles }) => {
+const Nav = ({ history, isOpen, styles }) => {
   return (
-    <NavContainer>
+    <NavContainer isOpen={isOpen}>
       <NavItem exact to="/">
         <IntlMessages id={"nav.home"} />
       </NavItem>

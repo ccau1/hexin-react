@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Nav from "./Nav";
 import styled from "styled-components";
+import { AppActions } from "../../Redux/App/actions";
 
 import NavBar from "../../Components/NavBar";
 import Image from "../../Components/Image";
@@ -43,6 +44,26 @@ const SideBarContainer = styled.div`
   }};
 `;
 
+const SideBarOverlay = styled.a`
+  ${props => {
+    if (props.isOpen) {
+      return `
+      @media (max-width: 700px) {
+        &:before {
+          content: '';
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.4);
+          position: fixed;
+          z-index: -1;
+        }
+      }`;
+    }
+  }};
+`;
+
 const SideBarHeader = NavBar.extend`
   background-color: rgba(0, 0, 0, 0.3);
   color: ${props => props.theme.color.primaryText};
@@ -58,18 +79,28 @@ const Logo = Image.extend`
 
 class Sidebar extends React.Component {
   render() {
-    const { isOpen } = this.props;
+    const { isOpen, toggleSidebarOpen } = this.props;
     return (
       <SideBarContainer isOpen={isOpen}>
         <SideBarHeader>
           <Logo src="/images/logo.png" style={{ height: "100%" }} />
         </SideBarHeader>
         <Nav isOpen={isOpen} />
+        <SideBarOverlay
+          isOpen={isOpen}
+          onClick={toggleSidebarOpen.bind(this, false)}
+        />
       </SideBarContainer>
     );
   }
 }
 
 const mapStateToProps = state => ({ isOpen: state.app.isSidebarOpen });
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      toggleSidebarOpen: AppActions.toggleSidebarOpen
+    },
+    dispatch
+  );
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

@@ -8,7 +8,8 @@ import Form from "../Constants/Form";
 import { reset } from "redux-form";
 
 class TodoForm extends React.Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     this.todos = db.collection(Collection.TODOS);
   }
   render() {

@@ -52,21 +52,25 @@ export default () => (
           gutter={0}
           style={{ display: "flex", flexDirection: "column" }}
         >
-          <div style={{ flex: 1, overflow: "auto" }}>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-            <Card>Some Item</Card>
-          </div>
+          <Card>
+            <Card.Content top noPadding>
+              <Card.List>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+                <Card>Some Item</Card>
+              </Card.List>
+            </Card.Content>
+          </Card>
         </Col>
         <Col xs={12} sm={9} gutter={0} style={{ display: "flex" }}>
           <Card>
@@ -75,7 +79,7 @@ export default () => (
               src={
                 "https://cdn3.bigcommerce.com/s-hweklwa/product_images/uploaded_images/the-bahamas.jpg?t=1478727778"
               }
-              style={{ height: "250px" }}
+              style={{ height: "245px" }}
             />
             <Card.Title>stuff</Card.Title>
             <H3>List Detail View Example</H3>

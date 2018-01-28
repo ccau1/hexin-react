@@ -1,13 +1,14 @@
 import firebase from "firebase";
 require("firebase/firestore");
 
+// TODO:: should be set from env instead
 let config = {
-  apiKey: "AIzaSyAQh6k-3RtovjVdrDEofnhLggltyw3h8NU",
-  authDomain: "kazpad-69db6.firebaseapp.com",
-  databaseURL: "https://kazpad-69db6.firebaseio.com",
-  projectId: "kazpad-69db6",
-  storageBucket: "kazpad-69db6.appspot.com",
-  messagingSenderId: "950034229852"
+  apiKey: "AIzaSyAwot8aaP7wgKRyaw1LcGMZjLKGVzN0KSg",
+  authDomain: "reacttemplate-d92a7.firebaseapp.com",
+  databaseURL: "https://reacttemplate-d92a7.firebaseio.com",
+  projectId: "reacttemplate-d92a7",
+  storageBucket: "reacttemplate-d92a7.appspot.com",
+  messagingSenderId: "166168134240"
 };
 
 firebase.initializeApp(config);

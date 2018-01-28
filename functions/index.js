@@ -17,9 +17,16 @@ exports.modifyTodo = functions.firestore
       return 0;
     }
 
+    const timestamp = new Date();
+
     // add custom data
-    const data = { lastModified: new Date() };
+    const data = { lastModified: timestamp };
+
+    // if previousData is empty, that means this is a create
+    if (!previousData) {
+      data.createdAt = timestamp;
+    }
 
     // update current document with data
-    return event.data.ref.set(data, { merge: true });
+    return event.data.ref.update(data);
   });

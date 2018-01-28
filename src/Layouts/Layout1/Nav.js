@@ -7,6 +7,11 @@ import IntlMessages from "../../Components/IntlMessages";
 const NavContainer = styled.div`
   color: ${props => props.theme.color.primary};
   margin-bottom: ${props => 2 * props.theme.unit + "px"};
+  span {
+    display: ${props => (props.isOpen ? "block" : "none")};
+  }
+  @media (max-width: ${props => props.theme.media.sm}px) {
+  }
 `;
 
 const Nav = ({ history, styles }) => {

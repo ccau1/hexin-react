@@ -54,6 +54,12 @@ const theme = {
       width: 100 * unit,
       height: 100 * unit
     }
+  },
+  media: {
+    xs: 400,
+    sm: 700,
+    md: 900,
+    lg: 1050
   }
 };
 

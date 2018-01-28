@@ -7,6 +7,7 @@ import account from "./Account/reducers";
 // import forms from "./Forms/reducers";
 import loading from "./Loading/reducers";
 import error from "./Error/reducers";
+import app from "./App/reducers";
 
 const reducer = combineReducers(
   Immutable({
@@ -15,7 +16,8 @@ const reducer = combineReducers(
     account,
     form,
     error,
-    loading
+    loading,
+    app
   })
 );
 

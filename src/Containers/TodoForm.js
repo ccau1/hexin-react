@@ -17,7 +17,7 @@ class TodoForm extends React.Component {
     return (
       <TodoFormComp
         onSubmit={item => {
-          this.todos.add({ ...item, createdAt: new Date() });
+          todos.add({ ...item, createdAt: new Date() });
           // TODO:: reset doesn't work. should it be here though?
           reset(Form.TODO);
         }}

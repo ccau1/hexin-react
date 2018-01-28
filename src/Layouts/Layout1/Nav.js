@@ -7,11 +7,16 @@ import IntlMessages from "../../Components/IntlMessages";
 const NavContainer = styled.div`
   color: ${props => props.theme.color.primary};
   margin-bottom: ${props => 2 * props.theme.unit + "px"};
+  span {
+    display: ${props => (props.isOpen ? "block" : "none")};
+  }
+  @media (max-width: 700px) {
+  }
 `;
 
-const Nav = ({ history, styles }) => {
+const Nav = ({ history, isOpen, styles }) => {
   return (
-    <NavContainer>
+    <NavContainer isOpen={isOpen}>
       <NavItem exact to="/">
         <IntlMessages id={"nav.home"} />
       </NavItem>

@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { AppActions } from "../../Redux/App/actions";
 import styled from "styled-components";
 import FaBars from "react-icons/lib/fa/bars";
 import Avatar from "../../Containers/Avatar";
@@ -6,6 +9,7 @@ import NavBar from "../../Components/NavBar";
 import Popover from "react-popover";
 import Button from "../../Components/Button";
 import AvatarMenu from "../../Containers/AvatarMenu";
+import Link from "../../Components/Link";
 
 const Container = NavBar;
 
@@ -20,32 +24,35 @@ const HeaderRightSide = styled.div`
   flex-direction: row;
 `;
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isAvatarMenuOpen: false
     };
   }
-  toggleAvatarMenuOpen = () => {
-    const { isAvatarMenuOpen } = this.state;
-    this.setState({ isAvatarMenuOpen: !isAvatarMenuOpen });
-  };
+
   render() {
-    const { toggleAvatarMenuOpen } = this;
-    const { isAvatarMenuOpen } = this.state;
+    const {
+      isAvatarMenuOpen,
+      toggleAvatarMenuOpen,
+      toggleSidebarOpen
+    } = this.props;
     return (
       <Container>
         <HeaderLeftSide>
-          <FaBars />
+          <Link onClick={toggleSidebarOpen.bind(this, undefined)}>
+            <FaBars />
+          </Link>
         </HeaderLeftSide>
         <HeaderRightSide>
           <Popover
             isOpen={isAvatarMenuOpen}
+            onOuterAction={toggleAvatarMenuOpen.bind(this, false)}
             preferPlace={"below"}
             body={<AvatarMenu />}
           >
-            <Button onClick={toggleAvatarMenuOpen} round>
+            <Button onClick={toggleAvatarMenuOpen.bind(this, undefined)} round>
               <Avatar />
             </Button>
           </Popover>
@@ -54,3 +61,16 @@ export default class Header extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  isAvatarMenuOpen: state.app.isAvatarMenuOpen
+});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      toggleSidebarOpen: AppActions.toggleSidebarOpen,
+      toggleAvatarMenuOpen: AppActions.toggleAvatarMenuOpen
+    },
+    dispatch
+  );
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

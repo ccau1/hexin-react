@@ -17,6 +17,7 @@ import TypographyPage from "../Pages/TypographyPage";
 import LandingPage from "../Pages/LandingPage";
 import LocalisationPage from "../Pages/LocalisationPage";
 import LoginPage from "../Pages/LoginPage";
+import AccountPage from "../Pages/AccountPage";
 
 const Loader = () => <div>Loading...</div>;
 const PageLazyload = Lazyload(Loader);
@@ -37,6 +38,7 @@ export default () => (
     <RouteLayout path="/grid" component={GridPage} />
     <RouteLayout path="/typography" component={TypographyPage} />
     <RouteLayout path="/localisation" component={LocalisationPage} />
+    <RouteLayout path="/account" component={AccountPage} />
     <RouteLandingLayout path="/landing-page" component={LandingPage} />
     <RouteAuthLayout path="/login" component={LoginPage} />
     <Route component={PageNotFound} />

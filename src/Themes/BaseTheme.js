@@ -24,7 +24,8 @@ const theme = {
       h4: "17pt",
       h5: "15pt",
       h6: "13pt",
-      p: "12pt"
+      p: "12pt",
+      small: "9pt"
     },
     margin: {
       h1: "50px 0 50px 0",
@@ -33,7 +34,8 @@ const theme = {
       h4: "10px 0 8px 0",
       h5: "8px 0 8px 0",
       h6: "7px 0 8px 0",
-      p: "5px 0 2px"
+      p: "5px 0 2px",
+      small: "2px 0"
     },
     color: {
       h1: "#1a1a1a",
@@ -42,7 +44,8 @@ const theme = {
       h4: "#1a1a1a",
       h5: "#1a1a1a",
       h6: "#1a1a1a",
-      p: "#545454"
+      p: "#545454",
+      small: "#545454"
     }
   },
   measurements: {

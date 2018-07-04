@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 const BasicLink = styled.a`
   cursor: pointer;
-  color: ${props => props.theme.color.primary};
+  color: ${props =>
+    props.active ? props.theme.color.secondary : props.theme.color.primary};
   text-decoration: none;
 `;
 

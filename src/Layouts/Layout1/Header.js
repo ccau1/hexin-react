@@ -4,6 +4,8 @@ import FaBars from "react-icons/lib/fa/bars";
 import PersonIcon from "react-icons/lib/md/person";
 
 import NavBar from "../../Components/NavBar";
+import Link from "../../Components/Link";
+import Separator from "../../Components/Separator";
 
 import NavItem from "./HeaderNavItem";
 import HeaderNavMenu from "./HeaderNavMenu";
@@ -24,8 +26,8 @@ const HeaderLeftSide = styled.div`
 `;
 
 const HeaderRightSide = styled.div`
-  text-align: right;
-  padding-left: 20px;
+  display: flex;
+  align-items: flex-end;
 `;
 
 const Logo = styled.img`

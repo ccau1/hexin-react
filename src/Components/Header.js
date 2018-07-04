@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Waypoint from "react-waypoint";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Waypoint from 'react-waypoint';
 
 const HeaderContainer = styled.div`
-  position: ${props => (props.fixed ? "fixed" : "relative")};
+  position: ${props => (props.fixed ? 'fixed' : 'relative')};
   height: 50px;
   width: 100%;
   left: 0;
@@ -31,9 +31,9 @@ export default class Header extends React.Component {
   }
   handlePositionChange(pos) {
     const { onThresholdChange } = this.props;
-    onThresholdChange(pos.currentPosition !== "inside");
+    onThresholdChange(pos.currentPosition !== 'inside');
     this.setState({
-      isPassFixedThreshold: pos.currentPosition !== "inside"
+      isPassFixedThreshold: pos.currentPosition !== 'inside'
     });
   }
   render() {
@@ -53,14 +53,14 @@ export default class Header extends React.Component {
           className={
             className +
             (toFixedThreshold && isPassFixedThreshold
-              ? " " + belowThresholdClassname
-              : "")
+              ? ' ' + belowThresholdClassname
+              : '')
           }
         >
           {children}
         </HeaderContainer>
         {toFixedThreshold && (
-          <div style={{ position: "absolute", top: toFixedThreshold + "px" }}>
+          <div style={{ position: 'absolute', top: toFixedThreshold + 'px' }}>
             <Waypoint onPositionChange={handlePositionChange.bind(this)} />
           </div>
         )}

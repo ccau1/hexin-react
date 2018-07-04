@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import withSideEffect from "react-side-effect";
+import React from 'react';
+import PropTypes from 'prop-types';
+import withSideEffect from 'react-side-effect';
 
 function reducePropsToState(propsList) {
   let returnObj = {
-    prefix: "",
-    suffix: "",
-    title: ""
+    prefix: '',
+    suffix: '',
+    title: ''
   };
   // TODO:: can be refractored
   propsList.forEach(prop => {
@@ -24,15 +24,15 @@ function reducePropsToState(propsList) {
 }
 
 function handleStateChangeOnClient(obj) {
-  var nextTitle = obj.title || "";
-  var prefix = obj.prefix || "";
-  var suffix = obj.suffix || "";
+  var nextTitle = obj.title || '';
+  var prefix = obj.prefix || '';
+  var suffix = obj.suffix || '';
   let finalTitle = nextTitle;
   if (prefix) {
-    finalTitle = prefix + (finalTitle ? " | " : "") + finalTitle;
+    finalTitle = prefix + (finalTitle ? ' | ' : '') + finalTitle;
   }
   if (suffix) {
-    finalTitle += (finalTitle ? " | " : "") + suffix;
+    finalTitle += (finalTitle ? ' | ' : '') + suffix;
   }
   if (finalTitle !== document.title) {
     document.title = finalTitle;

@@ -1,14 +1,14 @@
-import React from "react";
-import DocumentTitle from "../Components/DocumentTitle";
-import ContentContainer from "../Components/ContentContainer";
-import { Row, Col } from "react-flexa";
-import Card from "../Components/Card";
-import H1 from "../Components/H1";
-import H2 from "../Components/H2";
-import H3 from "../Components/H3";
+import React from 'react';
+import DocumentTitle from '../Components/DocumentTitle';
+import ContentContainer from '../Components/ContentContainer';
+import { Row, Col } from 'react-flexa';
+import Card from '../Components/Card';
+import H1 from '../Components/H1';
+import H2 from '../Components/H2';
+import H3 from '../Components/H3';
 
 export default () => (
-  <DocumentTitle title={"Grid Page"}>
+  <DocumentTitle title={'Grid Page'}>
     <ContentContainer>
       <H1>Grid Page</H1>
       <H2>12 Grid example</H2>
@@ -45,12 +45,12 @@ export default () => (
         </Col>
       </Row>
       <H2>List Detail View Example</H2>
-      <Row gutter={0} style={{ height: "700px" }}>
+      <Row gutter={0} style={{ height: '700px' }}>
         <Col
           xs={12}
           sm={3}
           gutter={0}
-          style={{ display: "flex", flexDirection: "column" }}
+          style={{ display: 'flex', flexDirection: 'column' }}
         >
           <Card>
             <Card.Content top noPadding>
@@ -72,14 +72,14 @@ export default () => (
             </Card.Content>
           </Card>
         </Col>
-        <Col xs={12} sm={9} gutter={0} style={{ display: "flex" }}>
+        <Col xs={12} sm={9} gutter={0} style={{ display: 'flex' }}>
           <Card>
             <Card.Image
               top
               src={
-                "https://cdn3.bigcommerce.com/s-hweklwa/product_images/uploaded_images/the-bahamas.jpg?t=1478727778"
+                'https://cdn3.bigcommerce.com/s-hweklwa/product_images/uploaded_images/the-bahamas.jpg?t=1478727778'
               }
-              style={{ height: "245px" }}
+              style={{ height: '245px' }}
             />
             <Card.Title>stuff</Card.Title>
             <H3>List Detail View Example</H3>

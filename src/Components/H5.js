@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.h5`
   display: block;
@@ -6,6 +6,6 @@ export default styled.h5`
   font-size: ${props => props.theme.fonts.size.h5};
   margin: ${props => props.theme.fonts.margin.h5};
   color: ${props => props.theme.fonts.color.h5};
-  ${props => (props.noTopMargin ? "margin-top: 0;" : "")};
-  ${props => (props.noBottomMargin ? "margin-top: 0;" : "")};
+  ${props => (props.noTopMargin ? 'margin-top: 0;' : '')};
+  ${props => (props.noBottomMargin ? 'margin-top: 0;' : '')};
 `;

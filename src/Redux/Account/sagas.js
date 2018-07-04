@@ -1,8 +1,8 @@
-import { all, takeLatest, call, put } from "redux-saga/effects";
-import { AccountActions, AccountTypes } from "./actions";
-import { startSubmit, stopSubmit } from "redux-form";
-import { getErrorFromResponse } from "../utils/saga";
-import Form from "../../Constants/Form";
+import { all, takeLatest, call, put } from 'redux-saga/effects';
+import { AccountActions, AccountTypes } from './actions';
+import { startSubmit, stopSubmit } from 'redux-form';
+import { getErrorFromResponse } from '../utils/saga';
+import Form from '../../Constants/Form';
 
 export function* login(api, action) {
   // Fetch fields from action
@@ -22,7 +22,7 @@ export function* login(api, action) {
     return;
   }
   // Store token
-  api.self.setHeader("Authorization", "bearer " + tokenResponse.data.token);
+  api.self.setHeader('Authorization', 'bearer ' + tokenResponse.data.token);
   yield put(AccountActions.setToken(tokenResponse.data.token));
 
   // Fetch user based on the token

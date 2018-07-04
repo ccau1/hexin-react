@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 export const DefaultButton = styled.button`
   position: relative;
@@ -9,12 +9,12 @@ export const DefaultButton = styled.button`
   border-radius: 8px;
   cursor: pointer;
   background-color: ${props =>
-    props.active ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0)"};
+    props.active ? 'rgba(0, 0, 0, 0.3)' : 'rgba(0, 0, 0, 0)'};
   &:focus {
     outline: 0;
   }
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

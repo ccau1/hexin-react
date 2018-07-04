@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.div`
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LJISa9jAyMuQwDjTS6Nk0yvIGL5UmaDQeKWxsJr1uftaOKaU")
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LJISa9jAyMuQwDjTS6Nk0yvIGL5UmaDQeKWxsJr1uftaOKaU')
     center center cover;
   position: absolute;
   top: 0px;

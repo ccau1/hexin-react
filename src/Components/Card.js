@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import NavBar from "./NavBar";
+import styled from 'styled-components';
+import NavBar from './NavBar';
 
 const CardSettings = styled.div`
   margin-top: ${props =>
-    props.top ? "-" + props.theme.measurements.padding + "px" : 0};
+    props.top ? '-' + props.theme.measurements.padding + 'px' : 0};
   padding: ${props =>
-    props.noPadding ? "0px" : props.theme.measurements.padding + "px"};
+    props.noPadding ? '0px' : props.theme.measurements.padding + 'px'};
 `;
 
 const Card = CardSettings.extend`
@@ -19,18 +19,18 @@ const Card = CardSettings.extend`
 `;
 
 Card.Title = NavBar.extend`
-  margin: ${props => "-" + props.theme.measurements.padding + "px"};
+  margin: ${props => '-' + props.theme.measurements.padding + 'px'};
   margin-bottom: 0;
   margin-top: ${props =>
-    props.top ? "-" + props.theme.measurements.padding + "px" : 0};
+    props.top ? '-' + props.theme.measurements.padding + 'px' : 0};
 `;
 Card.Content = CardSettings.extend`
-  margin: ${props => "-" + props.theme.measurements.padding + "px"};
+  margin: ${props => '-' + props.theme.measurements.padding + 'px'};
   margin-bottom: 0;
   margin-top: ${props =>
-    props.top ? "-" + props.theme.measurements.padding + "px" : 0};
+    props.top ? '-' + props.theme.measurements.padding + 'px' : 0};
   padding: ${props =>
-    props.noPadding ? "0px" : props.theme.measurements.padding + "px"};
+    props.noPadding ? '0px' : props.theme.measurements.padding + 'px'};
   flex: 1;
   overflow-y: auto;
   margin-left: -1;
@@ -50,10 +50,10 @@ Card.Image = CardSettings.extend`
   background-image: url('${props => props.src}');
   background-repeat: no-repeat;
   background-size: cover;
-  margin: ${props => "-" + props.theme.measurements.padding + "px"};
+  margin: ${props => '-' + props.theme.measurements.padding + 'px'};
   margin-bottom: 0;
   margin-top: ${props =>
-    props.top ? "-" + props.theme.measurements.padding + "px" : 0};
+    props.top ? '-' + props.theme.measurements.padding + 'px' : 0};
   height: 200px;
 `;
 

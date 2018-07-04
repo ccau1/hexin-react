@@ -1,24 +1,24 @@
-import React from "react";
-import { reduxForm } from "redux-form";
-import Button from "../Button";
-import Checkbox from "../Form/Checkbox";
-import TextInput from "../Form/TextInput";
-import Form from "../Form/Form";
-import Errors from "../Form/Errors";
-import { FormattedMessage } from "react-intl";
-import FormName from "../../Constants/Form";
+import React from 'react';
+import { reduxForm } from 'redux-form';
+import Button from '../Button';
+import Checkbox from '../Form/Checkbox';
+import TextInput from '../Form/TextInput';
+import Form from '../Form/Form';
+import Errors from '../Form/Errors';
+import { FormattedMessage } from 'react-intl';
+import FormName from '../../Constants/Form';
 
 const validate = values => {
   const errors = {};
 
   if (!values.username) {
-    errors.username = <FormattedMessage id={"error.required"} />;
+    errors.username = <FormattedMessage id={'error.required'} />;
   }
   if (!values.password) {
-    errors.password = <FormattedMessage id={"error.required"} />;
+    errors.password = <FormattedMessage id={'error.required'} />;
   }
   if (!values.otherthings) {
-    errors.otherthings = <FormattedMessage id={"error.required"} />;
+    errors.otherthings = <FormattedMessage id={'error.required'} />;
   }
   return errors;
 };

@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 export const ErrorMessage = styled.span`
   display: block;
@@ -18,11 +18,11 @@ class Errors extends React.Component {
       return error.map((err, errIndex) => (
         <ErrorMessage key={errIndex}>{err}</ErrorMessage>
       ));
-    } else if (typeof error === "object") {
+    } else if (typeof error === 'object') {
       return Object.keys(error).map(key => (
         <ErrorMessage key={key}>{`${key}: ${error[key]}`}</ErrorMessage>
       ));
-    } else if (typeof error === "string") {
+    } else if (typeof error === 'string') {
       return <ErrorMessage>{error}</ErrorMessage>;
     } else {
       return null;

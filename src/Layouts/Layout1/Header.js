@@ -1,16 +1,16 @@
-import React from "react";
-import styled from "styled-components";
-import FaBars from "react-icons/lib/fa/bars";
-import PersonIcon from "react-icons/lib/md/person";
+import React from 'react';
+import styled from 'styled-components';
+import FaBars from 'react-icons/lib/fa/bars';
+import PersonIcon from 'react-icons/lib/md/person';
 
-import NavBar from "../../Components/NavBar";
-import Link from "../../Components/Link";
-import Separator from "../../Components/Separator";
+import NavBar from '../../Components/NavBar';
+// import Link from '../../Components/Link';
+// import Separator from '../../Components/Separator';
 
-import NavItem from "./HeaderNavItem";
-import HeaderNavMenu from "./HeaderNavMenu";
-import HeaderNavToggle from "./HeaderNavToggle";
-import NavIcon from "./NavIcon";
+import NavItem from './HeaderNavItem';
+import HeaderNavMenu from './HeaderNavMenu';
+// import HeaderNavToggle from './HeaderNavToggle';
+import NavIcon from './NavIcon';
 
 const Container = styled(NavBar)`
   display: flex;
@@ -30,14 +30,14 @@ const HeaderRightSide = styled.div`
   align-items: flex-end;
 `;
 
-const Logo = styled.img`
-  height: 50px;
-  margin: -15px 0 0 0px;
+// const Logo = styled.img`
+//   height: 50px;
+//   margin: -15px 0 0 0px;
 
-  margin-top: -20px;
-  margin-bottom: -20px;
-  margin-right: 20px;
-`;
+//   margin-top: -20px;
+//   margin-bottom: -20px;
+//   margin-right: 20px;
+// `;
 
 export default () => (
   <Container>

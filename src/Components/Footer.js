@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Measure from "react-measure";
+import React from 'react';
+import styled from 'styled-components';
+import Measure from 'react-measure';
 
 const FloatFooterContainer = styled.div`
-  position: ${props => (props.fixed ? "fixed" : "absolute")};
+  position: ${props => (props.fixed ? 'fixed' : 'absolute')};
   left: 0;
   right: 0;
   bottom: 0;

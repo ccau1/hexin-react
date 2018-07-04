@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { withRouter } from "react-router-dom";
 import { AppActions } from "../../Redux/App/actions";
 import NavBar from "../../Components/NavBar";
 import styled from "styled-components";
@@ -89,7 +90,9 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Header);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Header)
+);

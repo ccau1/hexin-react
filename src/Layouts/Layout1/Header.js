@@ -3,11 +3,15 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { withRouter } from "react-router-dom";
 import { AppActions } from "../../Redux/App/actions";
-import NavBar from "../../Components/NavBar";
 import styled from "styled-components";
 import FaBars from "react-icons/lib/fa/bars";
 import PersonIcon from "react-icons/lib/md/person";
+
+import NavBar from "../../Components/NavBar";
 import Link from "../../Components/Link";
+import Separator from "../../Components/Separator";
+import LocaleSwitcher from "../../Containers/LocaleSwitcher";
+import IntlMessages from "../../Components/IntlMessages";
 
 import NavItem from "./HeaderNavItem";
 import HeaderNavMenu from "./HeaderNavMenu";
@@ -28,7 +32,8 @@ const HeaderLeftSide = styled.div`
 `;
 
 const HeaderRightSide = styled.div`
-  text-align: right;
+  display: flex;
+  align-items: flex-end;
 `;
 
 const Logo = styled.img`
@@ -57,18 +62,20 @@ class Header extends React.Component {
         <HeaderNavMenu right isOpen={isHeaderMenuOpen}>
           <NavItem to="/" exact>
             <NavIcon icon={PersonIcon} />
-            <span>Home</span>
+            <IntlMessages id={"nav.home"} />
           </NavItem>
           <NavItem to="/about">
             <NavIcon icon={PersonIcon} />
-            <span>About</span>
+            <IntlMessages id={"nav.about"} />
           </NavItem>
           <NavItem to="/grid">
             <NavIcon icon={PersonIcon} />
-            <span>Grid</span>
+            <IntlMessages id={"nav.grid"} />
           </NavItem>
         </HeaderNavMenu>
         <HeaderRightSide>
+          <Separator vertical />
+          <LocaleSwitcher />
           <HeaderNavToggle
             isOpen={isHeaderMenuOpen}
             onToggle={toggleHeaderMenuOpen}

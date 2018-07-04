@@ -2,31 +2,34 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { IntlActions } from "../Redux/Intl/actions";
-import Button from "../Components/Button";
+import Link from "../Components/Link";
 import ButtonGroup from "../Components/ButtonGroup";
 class LocaleSwitcherContainer extends React.Component {
   render() {
-    const { updateIntl, locale } = this.props;
+    const { updateIntl, locale, style } = this.props;
     return (
-      <ButtonGroup>
-        <Button.Primary
+      <ButtonGroup style={style}>
+        <Link
           active={locale === "en"}
           onClick={updateIntl.bind(this, "en")}
+          style={{ padding: "5px 10px", minWidth: "auto" }}
         >
-          English
-        </Button.Primary>
-        <Button.Primary
+          En
+        </Link>
+        <Link
           active={locale === "zh-cn"}
           onClick={updateIntl.bind(this, "zh-cn")}
+          style={{ padding: "5px 10px", minWidth: "auto" }}
         >
-          Simplified Chinese
-        </Button.Primary>
-        <Button.Primary
+          简体
+        </Link>
+        <Link
           active={locale === "zh-hk"}
           onClick={updateIntl.bind(this, "zh-hk")}
+          style={{ padding: "5px 10px", minWidth: "auto" }}
         >
-          Traditional Chinese
-        </Button.Primary>
+          繁體
+        </Link>
       </ButtonGroup>
     );
   }
@@ -40,6 +43,7 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
-export default connect(mapStateToProps, mapDispatchToProps)(
-  LocaleSwitcherContainer
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LocaleSwitcherContainer);

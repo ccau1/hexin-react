@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import DocumentTitle from '../Components/DocumentTitle';
+import DocumentTitle from '../Components/common/DocumentTitle';
 
 const PlaceHolder = styled.div`
   height: ${props => (props.height || '300') + 'px'};

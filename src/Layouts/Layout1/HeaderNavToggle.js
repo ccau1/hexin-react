@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FaBars from 'react-icons/lib/fa/bars';
-import LinkBase from '../../Components/Link';
+import LinkBase from '../../Components/common/Link';
 
 const Link = styled(LinkBase)`
   @media (min-width: 700px) {

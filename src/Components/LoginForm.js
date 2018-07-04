@@ -1,10 +1,10 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import Button from '../Button';
-import Checkbox from '../Form/Checkbox';
-import TextInput from '../Form/TextInput';
-import Form from '../Form/Form';
-import Errors from '../Form/Errors';
+import Button from './common/Button';
+import Checkbox from './common/Form/Checkbox';
+import TextInput from './common/Form/TextInput';
+import Form from './common/Form/Form';
+import Errors from './common/Form/Errors';
 import { FormattedMessage } from 'react-intl';
 import FormName from '../../Constants/Form';
 

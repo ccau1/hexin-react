@@ -1,17 +1,17 @@
 /* @flow */
 
 import React from 'react';
-import DocumentTitle from '../Components/DocumentTitle';
-import ContentContainer from '../Components/ContentContainer';
+import DocumentTitle from '../Components/common/DocumentTitle';
+import ContentContainer from '../Components/common/ContentContainer';
 import { Row, Col } from 'react-flexa';
-import H1 from '../Components/H1';
-import H2 from '../Components/H2';
-import H3 from '../Components/H3';
-import H4 from '../Components/H4';
-import H5 from '../Components/H5';
-import H6 from '../Components/H6';
-import P from '../Components/P';
-import Hr from '../Components/Hr';
+import H1 from '../Components/common/H1';
+import H2 from '../Components/common/H2';
+import H3 from '../Components/common/H3';
+import H4 from '../Components/common/H4';
+import H5 from '../Components/common/H5';
+import H6 from '../Components/common/H6';
+import P from '../Components/common/P';
+import Hr from '../Components/common/Hr';
 
 export default () => (
   <DocumentTitle title={'Typography Page'}>

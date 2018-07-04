@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../../Components/Header';
+import Header from '../../Components/common/Header';
 
 const HeaderStyled = styled(Header)`
   background: rgba(0, 0, 0, 0.1);

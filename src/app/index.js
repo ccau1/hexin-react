@@ -3,7 +3,7 @@ import Router from './Router';
 import { ThemeProvider } from 'styled-components';
 import Intl from './Intl';
 import theme from '../Themes';
-import DocumentTitle from '../Components/DocumentTitle';
+import DocumentTitle from '../Components/common/DocumentTitle';
 
 class App extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from './Layout';
 import Content from './Content';
-import Image from '../../Components/Image';
+import Image from '../../Components/common/Image';
 
 export default ({ children }) => {
   return (

@@ -4,8 +4,8 @@ import React from 'react';
 import Nav from './Nav';
 import styled from 'styled-components';
 
-import NavBar from '../../Components/NavBar';
-import Image from '../../Components/Image';
+import NavBar from '../../Components/common/NavBar';
+import Image from '../../Components/common/Image';
 
 const SideBarContainer = styled.div`
   width: ${props => 250 * props.theme.unit + 'px'};

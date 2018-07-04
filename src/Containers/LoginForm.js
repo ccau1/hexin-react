@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
 import { AccountActions } from '../Redux/Account/actions';
-import LoginForm from '../Components/App/LoginForm';
+import LoginForm from '../Components/LoginForm';
 
 class LoginFormContainer extends React.Component {
   getRedirectFromLocation(location) {

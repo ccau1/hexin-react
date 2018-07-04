@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const VerticalSeparator = styled.div`
   border-left: 1px solid #bdbdbd;
-  padding: 2px;
+  margin: 0 8px;
+  padding: 2px 0;
   display: inline-block;
   height: 100%;
   box-sizing: border-box;
@@ -11,7 +12,8 @@ const VerticalSeparator = styled.div`
 
 const HorizontalSeparator = styled.div`
   border-top: 1px solid #bdbdbd;
-  padding: 2px;
+  margin: 2px;
+  width: 100%;
   box-sizing: border-box;
 `;
 

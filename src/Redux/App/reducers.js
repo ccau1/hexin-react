@@ -4,7 +4,8 @@ import { AppTypes } from "./actions";
 import { reset, toggleField } from "../utils/reducer";
 
 export const INITIAL_STATE = Immutable({
-  isSidebarOpen: false
+  isSidebarOpen: false,
+  isHeaderMenuOpen: false
 });
 
 /* ------------- Reducers ------------- */
@@ -13,5 +14,6 @@ export const INITIAL_STATE = Immutable({
 
 export default createReducer(INITIAL_STATE, {
   [AppTypes.TOGGLE_SIDEBAR_OPEN]: toggleField("isSidebarOpen", "isOpen"),
+  [AppTypes.TOGGLE_HEADER_MENU_OPEN]: toggleField("isHeaderMenuOpen", "isOpen"),
   [AppTypes.RESET]: reset(INITIAL_STATE)
 });

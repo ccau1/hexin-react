@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const VerticalSeparator = styled.div`
   border-left: 1px solid #bdbdbd;

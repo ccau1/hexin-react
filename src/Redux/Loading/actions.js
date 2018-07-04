@@ -1,6 +1,6 @@
-import { createActions } from "reduxsauce";
+import { createActions } from 'reduxsauce';
 
 export const { Types: LoadingTypes, Creators: LoadingActions } = createActions(
   {},
-  { prefix: "Loading/" }
+  { prefix: 'Loading/' }
 );

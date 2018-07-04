@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.div`
   padding: ${props =>
     props.theme.measurements.padding +
-    "px " +
+    'px ' +
     props.theme.measurements.padding +
-    "px " +
+    'px ' +
     props.theme.measurements.padding * 3 +
-    "px " +
+    'px ' +
     props.theme.measurements.padding +
-    "px"};
+    'px'};
   flex: 1;
 `;

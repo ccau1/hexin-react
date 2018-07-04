@@ -1,8 +1,8 @@
 /* @flow */
 
-import React from "react";
-import Footer from "../../Components/Footer";
-import styled from "styled-components";
+import React from 'react';
+import Footer from '../../Components/Footer';
+import styled from 'styled-components';
 
 const FooterStyled = styled(Footer)`
   background-color: #ececec;

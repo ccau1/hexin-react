@@ -1,11 +1,11 @@
-import { createActions } from "reduxsauce";
+import { createActions } from 'reduxsauce';
 
 export const { Types: AppTypes, Creators: AppActions } = createActions(
   {
     /* ------------- Reducers ------------- */
-    toggleSidebarOpen: ["isOpen"],
-    toggleHeaderMenuOpen: ["isOpen"],
+    toggleSidebarOpen: ['isOpen'],
+    toggleHeaderMenuOpen: ['isOpen'],
     reset: null
   },
-  { prefix: "App/" }
+  { prefix: 'App/' }
 );

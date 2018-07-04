@@ -1,6 +1,6 @@
-import { createSelector } from "reselect";
-import { hydrateAll, hydrate } from "../../Services/Schemas";
-import R from "ramda";
+import { createSelector } from 'reselect';
+import { hydrateAll, hydrate } from '../../Services/Schemas';
+import R from 'ramda';
 
 export const _getResources = state => state.resources;
 export const createHydrate = R.curry((fieldName, stateIdFn) =>

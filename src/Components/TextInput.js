@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const InputContainer = styled.div``;
 
@@ -40,7 +40,7 @@ export default class TextInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      text: ''
     };
   }
   componentWillReceiveProps(nextProps) {

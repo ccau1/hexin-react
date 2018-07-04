@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.p`
   font-family: ${props => props.theme.fonts.fontFamily};

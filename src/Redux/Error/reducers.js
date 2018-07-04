@@ -1,8 +1,8 @@
-import { createReducer } from "reduxsauce";
-import Immutable from "seamless-immutable";
-import { reset } from "../utils/reducer";
+import { createReducer } from 'reduxsauce';
+import Immutable from 'seamless-immutable';
+import { reset } from '../utils/reducer';
 
-import { ErrorTypes } from "./actions";
+import { ErrorTypes } from './actions';
 
 /* ------------- Initial State ------------- */
 

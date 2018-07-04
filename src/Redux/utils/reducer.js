@@ -1,9 +1,9 @@
 // import update from 'immutability-helper'
-import * as R from "ramda";
-import { setArray, getFieldVal } from "./index";
-import Immutable from "seamless-immutable";
+import * as R from 'ramda';
+import { setArray, getFieldVal } from './index';
+import Immutable from 'seamless-immutable';
 
-export const mergeArray = (field, payloadField = "_ids") => (state, payload) =>
+export const mergeArray = (field, payloadField = '_ids') => (state, payload) =>
   Immutable.updateIn(state, setArray(field), arr =>
     arr.concat(R.difference(payload[payloadField], arr))
   );
@@ -13,7 +13,7 @@ export const mergeArray = (field, payloadField = "_ids") => (state, payload) =>
 export const setField = (field, payloadField) => (state, payload) =>
   state.setIn(
     setArray(field),
-    typeof payloadField === "object"
+    typeof payloadField === 'object'
       ? payloadField.value
       : payload[payloadField]
   );
@@ -21,7 +21,7 @@ export const setField = (field, payloadField) => (state, payload) =>
 export const resetField = initialState => (state, { field }) =>
   setField(field, { value: getFieldVal(initialState, field) })(state);
 
-export const toggleField = (field, payloadField = "isView") => (
+export const toggleField = (field, payloadField = 'isView') => (
   state,
   payload
 ) => {
@@ -33,8 +33,8 @@ export const toggleField = (field, payloadField = "isView") => (
   return state.setIn(setArray(field), isTrue);
 };
 
-export const mergeIds = field => mergeArray(field, "_ids");
+export const mergeIds = field => mergeArray(field, '_ids');
 
-export const setId = field => setField(field, "_id");
+export const setId = field => setField(field, '_id');
 
 export const reset = initialState => () => initialState;

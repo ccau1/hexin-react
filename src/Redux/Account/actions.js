@@ -1,14 +1,14 @@
-import { createActions } from "reduxsauce";
+import { createActions } from 'reduxsauce';
 
 export const { Types: AccountTypes, Creators: AccountActions } = createActions(
   {
     /* ------------- Sagas ------------- */
-    login: ["username", "password"],
+    login: ['username', 'password'],
 
     /* ------------- Reducers ------------- */
-    setUser: ["user"],
-    setToken: ["token"],
+    setUser: ['user'],
+    setToken: ['token'],
     reset: null
   },
-  { prefix: "Account/" }
+  { prefix: 'Account/' }
 );

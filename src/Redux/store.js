@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import createSagaMiddleware from "redux-saga";
-import { routerMiddleware } from "react-router-redux";
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { routerMiddleware } from 'react-router-redux';
 
 export default (rootReducer, rootSaga, browserHistory) => {
   /* ------------- Redux Configuration ----------------- */
@@ -26,7 +26,7 @@ export default (rootReducer, rootSaga, browserHistory) => {
 
   const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-        hostname: "remotedev.io"
+        hostname: 'remotedev.io'
       })
     : compose;
 

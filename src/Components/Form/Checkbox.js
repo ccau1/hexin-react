@@ -1,6 +1,6 @@
-import React from "react";
-import { Field } from "redux-form";
-import FieldContainer from "./FieldContainer";
+import React from 'react';
+import { Field } from 'redux-form';
+import FieldContainer from './FieldContainer';
 
 function Checkbox({ input, label, disabled }) {
   return (

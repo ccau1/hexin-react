@@ -1,8 +1,8 @@
-import { createActions } from "reduxsauce";
+import { createActions } from 'reduxsauce';
 
 export const { Types: IntlTypes, Creators: IntlActions } = createActions(
   {
-    updateIntl: ["locale"]
+    updateIntl: ['locale']
   },
-  { prefix: "Intl/" }
+  { prefix: 'Intl/' }
 );

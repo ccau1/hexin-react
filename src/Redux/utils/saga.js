@@ -1,4 +1,4 @@
-import { put } from "redux-saga/effects";
+import { put } from 'redux-saga/effects';
 
 export const handleResponse = response =>
   function*(onSuccess, onFailed) {
@@ -28,16 +28,16 @@ export const handleLoading = (loadingFn, fn) =>
 export const getErrorFromResponse = (formName, response) => {
   let error = {};
   if (!response.status) {
-    error = { _error: "server down" };
+    error = { _error: 'server down' };
   } else if (response.status === 400) {
     error =
-      typeof response.data === "string"
+      typeof response.data === 'string'
         ? { _error: response.data }
         : response.data;
   } else if (response.status >= 500) {
-    error = { _error: "Server Issue" };
+    error = { _error: 'Server Issue' };
   } else {
-    error = { _error: "unknown error" };
+    error = { _error: 'unknown error' };
   }
 
   return error;

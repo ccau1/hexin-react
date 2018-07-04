@@ -1,6 +1,6 @@
-import apisauce from "apisauce";
+import apisauce from 'apisauce';
 
-const create = (baseURL = "") => {
+const create = (baseURL = '') => {
   // ------
   // STEP 1
   // ------
@@ -12,14 +12,14 @@ const create = (baseURL = "") => {
     baseURL,
     // here are some default headers
     headers: {
-      "Content-Type": "application/json",
-      "Cache-Control": "no-cache",
-      "Accept-Language": "en"
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache',
+      'Accept-Language': 'en'
     },
     // 10 second timeout...
     timeout: 10000
   });
-  const naviMonitor = response => console.info("api:: ", response);
+  const naviMonitor = response => console.info('api:: ', response);
   api.addMonitor(naviMonitor);
 
   // ------
@@ -38,8 +38,8 @@ const create = (baseURL = "") => {
   //
 
   const getToken = (username, password) =>
-    api.post("auth/token", { username, password });
-  const getAccountUser = () => api.get("account/user");
+    api.post('auth/token', { username, password });
+  const getAccountUser = () => api.get('account/user');
 
   // ------
   // STEP 3

@@ -1,5 +1,5 @@
-import { createReducer } from "reduxsauce";
-import Immutable from "seamless-immutable";
+import { createReducer } from 'reduxsauce';
+import Immutable from 'seamless-immutable';
 // import { LoadingTypes } from "./actions";
 
 export const INITIAL_STATE = Immutable({

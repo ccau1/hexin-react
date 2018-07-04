@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const withContext = contextTypes => Component => {
   /* The context is passed as props. This way the component is

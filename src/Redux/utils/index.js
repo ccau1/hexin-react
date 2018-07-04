@@ -1,4 +1,4 @@
-import * as _reducer from "./reducer";
+import * as _reducer from './reducer';
 
 export const setArray = field => (Array.isArray(field) ? field : [field]);
 

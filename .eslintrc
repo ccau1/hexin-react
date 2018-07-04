@@ -1,0 +1,8 @@
+{
+  "extends": ["react-app", "prettier", "prettier/react"],
+  "plugins": ["prettier", "react", "import"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-throw-literal": "off"
+  }
+}

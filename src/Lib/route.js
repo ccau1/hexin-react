@@ -1,12 +1,12 @@
-import React, { Children } from "react";
-import PropTypes from "prop-types";
-import { Route, withRouter } from "react-router-dom";
-import OriginalNavLink from "react-router-dom/NavLink";
-import { Redirect } from "react-router";
+import React, { Children } from 'react';
+import PropTypes from 'prop-types';
+import { Route, withRouter } from 'react-router-dom';
+import OriginalNavLink from 'react-router-dom/NavLink';
+import { Redirect } from 'react-router';
 
 // Strategy that manages the behaviour of the route, such as its authenticate process
 export const RouteStrategy = class RouteStrategy {
-  unAuthRedirect = "/login";
+  unAuthRedirect = '/login';
 
   authenticate(roles: Array<string>): boolean {
     return true;

@@ -1,4 +1,4 @@
 export default {
-  LOGIN: "login",
-  TODO: "todo"
+  LOGIN: 'login',
+  TODO: 'todo'
 };

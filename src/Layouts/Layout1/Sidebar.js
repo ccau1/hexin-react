@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import Nav from "./Nav";
-import styled from "styled-components";
-import { AppActions } from "../../Redux/App/actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import Nav from './Nav';
+import styled from 'styled-components';
+import { AppActions } from '../../Redux/App/actions';
 
-import NavBar from "../../Components/NavBar";
-import Image from "../../Components/Image";
+import NavBar from '../../Components/NavBar';
+import Image from '../../Components/Image';
 
 const SideBarContainer = styled.div`
-  width: ${props => 250 * props.theme.unit + "px"};
+  width: ${props => 250 * props.theme.unit + 'px'};
   background-color: ${props => props.theme.color.primary};
   ${props => {
     if (props.isOpen) {
@@ -67,8 +67,8 @@ const SideBarOverlay = styled.a`
 const SideBarHeader = NavBar.extend`
   background-color: rgba(0, 0, 0, 0.3);
   color: ${props => props.theme.color.primaryText};
-  font-size: ${props => 17 * props.theme.unit + "px"};
-  padding: 8px ${props => props.theme.measurements.padding + "px"};
+  font-size: ${props => 17 * props.theme.unit + 'px'};
+  padding: 8px ${props => props.theme.measurements.padding + 'px'};
 `;
 
 const Logo = Image.extend`
@@ -83,7 +83,7 @@ class Sidebar extends React.Component {
     return (
       <SideBarContainer isOpen={isOpen}>
         <SideBarHeader>
-          <Logo src="/images/logo.png" style={{ height: "100%" }} />
+          <Logo src="/images/logo.png" style={{ height: '100%' }} />
         </SideBarHeader>
         <Nav isOpen={isOpen} />
         <SideBarOverlay
@@ -103,4 +103,7 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch
   );
-export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sidebar);

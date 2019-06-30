@@ -6,4 +6,6 @@ export default styled.h1`
   font-size: ${props => props.theme.fonts.size.h1};
   margin: ${props => props.theme.fonts.margin.h1};
   color: ${props => props.theme.fonts.color.h1};
+  ${props => (props.noTopMargin ? "margin-top: 0;" : "")};
+  ${props => (props.noBottomMargin ? "margin-top: 0;" : "")};
 `;

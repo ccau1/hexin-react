@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 export const DefaultButton = styled.button`
   position: relative;
-  padding: 10px;
-  min-width: 100px;
+  padding: ${props => (props.round ? "6px" : "10px")};
+  min-width: ${props => (props.round ? "0px" : "100px")};
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: ${props => (props.round ? "50%" : "8px")};
   cursor: pointer;
   background-color: ${props =>
     props.active ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0)"};
@@ -24,6 +24,11 @@ export const DefaultButton = styled.button`
   &:hover:after {
     background-color: rgba(255, 255, 255, 0.05);
   }
+  &:disabled {
+    cursor: default;
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 `;
 export const SecondaryButton = styled(DefaultButton)`
   background-color: ${props =>
@@ -34,6 +39,11 @@ export const SecondaryButton = styled(DefaultButton)`
     props.active
       ? props.theme.color.secondaryHighlightText
       : props.theme.color.secondaryText};
+  &:disabled {
+    cursor: default;
+    border-color: ${props => props.theme.color.secondaryDisabled};
+    background-color: ${props => props.theme.color.secondaryDisabled};
+  }
 `;
 export const PrimaryButton = styled(DefaultButton)`
   background-color: ${props =>
@@ -44,6 +54,11 @@ export const PrimaryButton = styled(DefaultButton)`
     props.active
       ? props.theme.color.primaryHighlightText
       : props.theme.color.primaryText};
+  &:disabled {
+    cursor: default;
+    border-color: ${props => props.theme.color.primaryDisabled};
+    background-color: ${props => props.theme.color.primaryDisabled};
+  }
 `;
 
 const Button = ({ primary, secondary, ...rest }) => {

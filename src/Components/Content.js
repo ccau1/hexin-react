@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default styled.div`
   background-color: rgba(255, 255, 255, 0.8);
-  padding: ${props => props.theme.screenPadding}px;
+  padding: ${props => props.theme.measurements.padding}px;
   width: ${props => props.width || 500}px;
   box-sizing: border-box;
   flex: 1;

@@ -2,29 +2,44 @@ import React from "react";
 import styled from "styled-components";
 import NavItem from "./NavItem";
 import NavItemGroup from "./NavItemGroup";
+import IntlMessages from "../../Components/IntlMessages";
 
 const NavContainer = styled.div`
   color: ${props => props.theme.color.primary};
   margin-bottom: ${props => 2 * props.theme.unit + "px"};
+  span {
+    display: ${props => (props.isOpen ? "block" : "none")};
+  }
+  @media (max-width: 700px) {
+  }
 `;
 
-const Nav = ({ history, styles }) => {
+const Nav = ({ history, isOpen, styles }) => {
   return (
-    <NavContainer>
+    <NavContainer isOpen={isOpen}>
       <NavItem exact to="/">
-        Home
+        <IntlMessages id={"nav.home"} />
       </NavItem>
       <NavItem exact to="/localisation">
-        Localisation
+        <IntlMessages id={"nav.localisation"} />
       </NavItem>
       <NavItem to="/about" auth={["member", "admin"]}>
-        About
+        <IntlMessages id={"nav.about"} />
       </NavItem>
-      <NavItemGroup label={"Components"}>
-        <NavItem to="/grid">Grid</NavItem>
-        <NavItem to="/typography">Typography</NavItem>
+      <NavItem to="/todos">
+        <IntlMessages id={"nav.todos"} />
+      </NavItem>
+      <NavItemGroup label={<IntlMessages id={"nav.components"} />}>
+        <NavItem to="/grid">
+          <IntlMessages id={"nav.grid"} />
+        </NavItem>
+        <NavItem to="/typography">
+          <IntlMessages id={"nav.typography"} />
+        </NavItem>
       </NavItemGroup>
-      <NavItem to="/landing-page">Landing Page</NavItem>
+      <NavItem to="/landing-page">
+        <IntlMessages id={"nav.landingpage"} />
+      </NavItem>
     </NavContainer>
   );
 };

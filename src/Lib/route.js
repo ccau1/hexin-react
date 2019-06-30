@@ -73,7 +73,7 @@ export const getRoute = (
         {...rest}
         render={renderProps => {
           if (auth) {
-            if (routeStrategy.authenticate(auth)) {
+            if (routeStrategy.authenticate(auth, rest)) {
               return returnRoute(Component || render, renderProps, layout);
             } else {
               const RedirectComponent = withRouter(({ location }) => (
